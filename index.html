@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!--
+  Magyar Tűzvédelmi Egyeztető Fórum (MTEF) — Landing page
+  Single-file, Tailwind CDN + Google Fonts. Fully responsive.
+
+  TODO a végleges integrációhoz:
+  - Cserélni: alapítói szervezetek hivatalos logói (jelenleg SVG monogram-placeholderek)
+  - Cserélni: hero tűzoltó-fotó (jelenleg duotone SVG silhouette)
+  - PDF közlemény hozzáadása (#downloadPdf)
+-->
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Magyar Tűzvédelmi Egyeztető Fórum (MTEF)</title>
+<meta name="description" content="Hat meghatározó tűzvédelmi szakmai szervezet együttműködési platformja a hazai tűzvédelem modernizációjáért." />
+<meta property="og:title" content="Magyar Tűzvédelmi Egyeztető Fórum" />
+<meta property="og:description" content="Hat meghatározó tűzvédelmi szakmai szervezet együttműködési platformja a hazai tűzvédelem modernizációjáért." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Magyar Tűzvédelmi Egyeztető Fórum" />
+<meta name="twitter:description" content="Hat meghatározó tűzvédelmi szakmai szervezet együttműködési platformja a hazai tűzvédelem modernizációjáért." />
+<meta name="twitter:image" content="assets/og-image.png" />
+<link rel="icon" type="image/png" href="logos/mtef.png" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          fire: '#CD2A3E', forest: '#436F4D',
+          ink:  '#1A1D21', warmgray:'#6B7280',
+          sand: '#F8F6F2', line: '#E5E7EB',
+        },
+        fontFamily: {
+          sans:  ['"DM Sans"', 'system-ui', 'sans-serif'],
+          serif: ['Newsreader', 'Georgia', 'serif'],
+          mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+        letterSpacing: { tightish: '-0.02em' },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', system-ui, sans-serif; color: #1A1D21; background: #FFFFFF; }
+
+  .hu-stripe { height: 3px;
+    background: linear-gradient(to right, #CD2A3E 0% 33.33%, #FFFFFF 33.33% 66.66%, #436F4D 66.66% 100%); }
+  .hu-stripe-soft { height: 2px;
+    background: linear-gradient(to right,
+      rgba(205,42,62,0.85) 0% 33.33%,
+      rgba(229,231,235,0.9) 33.33% 66.66%,
+      rgba(67,111,77,0.85) 66.66% 100%); }
+
+  .paper-noise {
+    background-image:
+      radial-gradient(rgba(26,29,33,0.025) 1px, transparent 1px),
+      radial-gradient(rgba(26,29,33,0.018) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  .dropcap::first-letter {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500; float: left;
+    font-size: 4.4rem; line-height: 0.9;
+    padding: 0.35rem 0.7rem 0 0; color: #CD2A3E;
+  }
+
+  @keyframes flamePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.92; transform: scale(1.015); }
+  }
+  .flame-pulse { animation: flamePulse 4.5s ease-in-out infinite; transform-origin: center bottom; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .flame-pulse { animation: none; }
+  }
+
+  .nav-scrolled {
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #E5E7EB;
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #CD2A3E; outline-offset: 3px; border-radius: 4px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 9999px; display: inline-block; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- SVG SYMBOLS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mtef-flame" viewBox="0 0 120 140">
+      <path d="M40 130 C 18 110, 20 80, 38 58 C 50 42, 52 28, 50 12 C 64 28, 66 50, 56 70 C 50 82, 52 96, 60 110 C 56 120, 50 126, 40 130 Z" fill="#CD2A3E"/>
+      <path d="M60 130 C 54 118, 54 102, 60 88 C 66 76, 68 62, 60 46 C 70 60, 74 76, 70 92 C 67 104, 68 118, 64 130 Z" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.6"/>
+      <path d="M80 130 C 102 110, 100 80, 84 58 C 74 44, 70 28, 74 14 C 60 30, 58 50, 66 70 C 72 82, 70 96, 62 110 C 66 120, 70 126, 80 130 Z" fill="#436F4D"/>
+      <path d="M22 132 C 50 124, 70 124, 98 132 L 96 136 C 70 130, 50 130, 24 136 Z" fill="#CD2A3E" opacity="0.85"/>
+    </symbol>
+
+    <symbol id="bp-floorplan" viewBox="0 0 600 400">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <rect x="40" y="40" width="520" height="320"/>
+        <rect x="40" y="40" width="220" height="160"/>
+        <rect x="260" y="40" width="160" height="160"/>
+        <rect x="420" y="40" width="140" height="320"/>
+        <rect x="40" y="200" width="380" height="160"/>
+        <line x1="120" y1="200" x2="120" y2="360"/>
+        <line x1="220" y1="200" x2="220" y2="360"/>
+        <line x1="320" y1="200" x2="320" y2="360"/>
+        <line x1="40" y1="280" x2="420" y2="280"/>
+        <line x1="260" y1="40" x2="260" y2="200" stroke-dasharray="4 4"/>
+        <line x1="420" y1="40" x2="420" y2="360" stroke-dasharray="4 4"/>
+        <path d="M80 200 a 24 24 0 0 1 24 -24"/>
+        <path d="M260 100 a 22 22 0 0 1 22 22"/>
+      </g>
+    </symbol>
+
+    <symbol id="ff-silhouette" viewBox="0 0 400 600">
+      <defs>
+        <linearGradient id="ffgrad" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#1A1D21"/>
+          <stop offset="1" stop-color="#3a2126"/>
+        </linearGradient>
+        <linearGradient id="flamebg" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#CD2A3E" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#1A1D21" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="600" fill="url(#flamebg)" opacity="0.6"/>
+      <g fill="#CD2A3E" opacity="0.5">
+        <path d="M30 600 C 50 480 70 470 60 380 C 90 440 110 470 100 540 C 120 520 130 540 130 600 Z"/>
+        <path d="M340 600 C 360 500 380 480 370 400 C 390 460 400 480 395 560 C 410 540 415 560 420 600 Z"/>
+      </g>
+      <g fill="url(#ffgrad)">
+        <rect x="135" y="240" width="60" height="180" rx="14"/>
+        <rect x="205" y="240" width="60" height="180" rx="14"/>
+        <path d="M90 600 L 110 360 C 120 290 160 250 200 250 C 240 250 280 290 290 360 L 310 600 Z"/>
+        <rect x="100" y="450" width="200" height="14" fill="#F2D26B" opacity="0.7"/>
+        <rect x="100" y="490" width="200" height="10" fill="#F2D26B" opacity="0.5"/>
+        <ellipse cx="200" cy="200" rx="70" ry="56" fill="#1A1D21"/>
+        <ellipse cx="200" cy="180" rx="68" ry="44" fill="#2a2d31"/>
+        <rect x="132" y="194" width="136" height="10" fill="#CD2A3E"/>
+        <rect x="178" y="232" width="44" height="22" fill="#1A1D21"/>
+      </g>
+    </symbol>
+
+    <symbol id="ic-target" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="24" cy="24" r="18"/>
+        <circle cx="24" cy="24" r="11"/>
+        <circle cx="24" cy="24" r="4" fill="currentColor" stroke="none"/>
+        <path d="M24 6 v6 M24 36 v6 M6 24 h6 M36 24 h6"/>
+      </g>
+    </symbol>
+    <symbol id="ic-pillar" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M6 12 L24 4 L42 12"/>
+        <line x1="6" y1="12" x2="42" y2="12"/>
+        <line x1="11" y1="16" x2="11" y2="38"/>
+        <line x1="19" y1="16" x2="19" y2="38"/>
+        <line x1="29" y1="16" x2="29" y2="38"/>
+        <line x1="37" y1="16" x2="37" y2="38"/>
+        <line x1="6" y1="42" x2="42" y2="42"/>
+      </g>
+    </symbol>
+    <symbol id="ic-handshake" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 22 l8 -6 l6 4 l8 -3 l8 4 l8 -2"/>
+        <path d="M16 22 l6 6 l4 -2 l6 6"/>
+        <path d="M22 28 l-3 3 M28 30 l-3 3 M32 32 l-2 2"/>
+      </g>
+    </symbol>
+
+    <symbol id="ic-pdf" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 3 H7 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h10 a2 2 0 0 0 2 -2 V8 z"/>
+        <path d="M14 3 v5 h5"/>
+        <path d="M9 14 h6 M9 17 h6 M9 11 h2"/>
+      </g>
+    </symbol>
+    <symbol id="ic-link" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66l-1 1"/>
+        <path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1-1"/>
+      </g>
+    </symbol>
+    <symbol id="ic-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.55c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4z"/>
+    </symbol>
+    <symbol id="ic-fb" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M13.5 21v-8H16l.4-3.2H13.5V7.7c0-.9.25-1.55 1.55-1.55H16.5V3.2C16.2 3.15 15.2 3 14.05 3 11.65 3 10 4.45 10 7.1v2.7H7.5V13H10v8z"/>
+    </symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12 h14 M13 6 l6 6 -6 6"/>
+    </symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="M3 7 l9 6 l9 -6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============== NAV ============== -->
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="MTEF kezdőoldal">
+      <img src="logos/mtef.png" alt="MTEF" class="w-9 h-9 object-contain" loading="eager"/>
+      <span class="font-bold tracking-tightish text-ink leading-none hidden sm:block">MTEF</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[14.5px] text-ink/80">
+      <a href="#about"     class="hover:text-fire transition-colors">Rólunk</a>
+      <a href="#founders"  class="hover:text-fire transition-colors">Alapítók</a>
+      <a href="#goals"     class="hover:text-fire transition-colors">Céljaink</a>
+      <a href="#statement" class="hover:text-fire transition-colors">Közlemény</a>
+      <a href="#contact"   class="hover:text-fire transition-colors">Kapcsolat</a>
+    </nav>
+    <a href="#contact"
+       class="inline-flex items-center gap-2 bg-fire text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-fire/90 transition-colors">
+      Kapcsolat
+      <svg class="w-3.5 h-3.5"><use href="#ic-arrow"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============== HERO ============== -->
+<section class="relative pt-28 pb-12 sm:pt-32 sm:pb-16 bg-sand paper-noise overflow-hidden">
+  <div class="pointer-events-none absolute inset-0">
+    <svg class="absolute left-0 bottom-0 w-[55%] sm:w-[42%] md:w-[36%] lg:w-[32%] max-w-[520px] opacity-[0.18] sm:opacity-25"
+         viewBox="0 0 400 600" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
+      <use href="#ff-silhouette"/>
+    </svg>
+    <svg class="absolute right-[-40px] top-24 w-[80%] sm:w-[55%] md:w-[48%] lg:w-[44%] max-w-[720px] text-ink/40 opacity-30"
+         viewBox="0 0 600 400" preserveAspectRatio="xMaxYMin meet" aria-hidden="true">
+      <use href="#bp-floorplan"/>
+    </svg>
+    <div class="absolute inset-0 bg-gradient-to-r from-sand/70 via-sand/40 to-sand/70"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-9">
+      <p class="font-mono text-[11.5px] sm:text-xs tracking-[0.18em] uppercase text-warmgray mb-6 sm:mb-8 flex items-center gap-3">
+        <span class="dot bg-fire"></span>
+        Közlemény · Budapest · 2026. május 4.
+      </p>
+      <h1 class="font-bold tracking-tightish text-ink text-[42px] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[80px] lg:leading-[0.98]">
+        Megalakult a<br/>
+        <span class="relative inline-block">Magyar Tűzvédelmi
+          <svg class="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 300 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 5 Q 75 0 150 4 T 300 3" stroke="#CD2A3E" stroke-width="2" fill="none"/>
+          </svg>
+        </span><br/>
+        Egyeztető Fórum.
+      </h1>
+      <p class="mt-7 sm:mt-9 max-w-2xl text-[17px] sm:text-[19px] leading-[1.65] text-ink/75">
+        A hazai tűzvédelem hat meghatározó civil szakmai szervezete egységes platformot
+        hozott létre a magyarországi tűzvédelem modernizációjáért, az emberi élet
+        és a vagyonbiztonság védelméért.
+      </p>
+      <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+        <a href="#statement"
+           class="inline-flex items-center gap-2 bg-fire text-white px-5 py-3 rounded-full text-[15px] font-medium hover:bg-fire/90 transition-colors">
+          A teljes közlemény
+          <svg class="w-4 h-4"><use href="#ic-arrow"/></svg>
+        </a>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 border border-ink/15 text-ink px-5 py-3 rounded-full text-[15px] font-medium hover:border-ink/40 hover:bg-white transition-colors">
+          Kapcsolat felvétele
+        </a>
+      </div>
+    </div>
+    <div class="hidden lg:flex lg:col-span-3 justify-end">
+      <img src="logos/mtef.png" alt="MTEF logó" class="flame-pulse w-48 h-56 object-contain" loading="eager"/>
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 mt-10 sm:mt-12">
+    <div class="hu-stripe-soft w-full max-w-md"></div>
+    <p class="mt-3 font-mono text-[11.5px] tracking-wider uppercase text-warmgray">
+      Kelt Szent Flórián napjának előestéjén · 2026. május 3.
+    </p>
+  </div>
+</section>
+
+<!-- ============== 3. MIT JELENT EZ? ============== -->
+<section id="about" class="relative py-20 sm:py-28 bg-white overflow-hidden">
+  <svg class="pointer-events-none absolute -right-24 top-0 w-[640px] text-ink opacity-[0.05] hidden md:block"
+       viewBox="0 0 600 400" aria-hidden="true">
+    <use href="#bp-floorplan"/>
+  </svg>
+  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 reveal">
+    <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-fire mb-5">Mit jelent ez?</p>
+    <p class="font-serif text-[24px] sm:text-[30px] md:text-[34px] leading-[1.3] text-ink">
+      A magyar tűzvédelem évek óta küzd a széttagoltsággal.
+      Tűzoltók, mérnökök, építészek, vállalkozók és kutatók eddig
+      külön-külön dolgoztak ugyanazon a célon: hogy
+      <span class="text-fire">kevesebb tűz keletkezzen</span>,
+      és ahol mégis, ott
+      <span class="text-forest">kevesebb kár essen</span>.
+      A Magyar Tűzvédelmi Egyeztető Fórum ezt változtatja meg —
+      egy asztalhoz hívja a szakma minden szereplőjét.
+    </p>
+  </div>
+</section>
+
+<!-- ============== 4. ALAPÍTÓK ============== -->
+<section id="founders" class="py-20 sm:py-28 bg-sand paper-noise">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-warmgray mb-4">Alapító szervezetek</p>
+      <h2 class="font-bold tracking-tightish text-ink text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+        Hat szervezet, egy közös ügy.
+      </h2>
+      <p class="mt-5 text-[17px] text-ink/70 leading-[1.65] max-w-2xl">
+        Az alapítók 2025 őszén együttműködési megállapodást írtak alá. Ennek
+        szerves folytatásaként 2026. április 29-én megalakították az MTEF-et.
+      </p>
+    </div>
+
+    <div class="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <!-- Card -->
+      <a href="https://tuzoltoszovetseg.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/mtsz.png" alt="Magyar Tűzoltó Szövetség logó" class="h-full w-auto object-contain" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">Magyar Tűzoltó Szövetség</h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">A hazai tűzoltóság — hivatásos, önkéntes és létesítményi — szakmai érdekképviselete.</p>
+      </a>
+      <a href="https://www.mmk.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/mmk.png" alt="Magyar Mérnöki Kamara logó" class="w-auto object-contain" style="height:120%" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">Magyar Mérnöki Kamara<br/><span class="font-normal text-warmgray">Tűzvédelmi Tagozat</span></h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">A tűzvédelmi tervezés szabályozási és szakmai képviselete.</p>
+      </a>
+      <a href="https://mek.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/mek.png" alt="Magyar Építész Kamara logó" class="h-full w-auto object-contain" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">Magyar Építész Kamara<br/><span class="font-normal text-warmgray">Tűzvédelmi Tagozat</span></h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">Az építészeti tervezés és a tűzvédelem találkozási pontjainak gondozása.</p>
+      </a>
+      <a href="https://www.tszvsz.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/tszvsz.png" alt="TSZVSZ logó" class="h-full w-auto object-contain" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">TSZVSZ Magyar Tűzvédelmi Szövetség</h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">A tűzvédelmi iparág, gyártók és szolgáltatók szakmai szövetsége.</p>
+      </a>
+      <a href="https://evosz.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/evosz.png" alt="ÉVOSZ logó" class="h-full w-auto object-contain" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">Építési Vállalkozók Országos Szakszövetsége<br/><span class="font-normal text-warmgray">Tűzvédelmi Tagozat</span></h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">A kivitelezői oldal hangja a tűzvédelmi szabványok formálásában.</p>
+      </a>
+      <a href="https://www.tmke.hu/" target="_blank" rel="noopener noreferrer" class="group bg-white border border-line/80 rounded-2xl p-6 sm:p-7 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all reveal block">
+        <div class="h-12 flex items-center"><img src="logos/tmke.png" alt="TMKE logó" class="w-auto object-contain" style="height:200%" loading="lazy"/></div>
+        <h3 class="mt-5 font-semibold text-ink text-[17px] leading-snug group-hover:text-fire transition-colors">Tűzvédelmi Mérnökök Közhasznú Egyesülete</h3>
+        <p class="mt-2 text-[14.5px] text-warmgray leading-relaxed">A tűzvédelmi mérnöki gyakorlat és továbbképzés közössége.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 5. CÉLJAINK ============== -->
+<section id="goals" class="py-20 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-warmgray mb-4">Céljaink</p>
+      <h2 class="font-bold tracking-tightish text-ink text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+        Három irány, közös célért.
+      </h2>
+    </div>
+
+    <div class="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+      <div class="reveal">
+        <svg class="w-12 h-12 text-fire" aria-hidden="true"><use href="#ic-target"/></svg>
+        <h3 class="mt-6 font-semibold text-ink text-xl">Modernizáció</h3>
+        <p class="mt-3 text-[16px] text-ink/75 leading-[1.65]">
+          A magyarországi tűzvédelem megújítása az emberi élet és a vagyonbiztonság javításáért.
+          A fejlesztés nemzetgazdasági előnyökkel jár, és a fenntarthatóságot is szolgálja.
+        </p>
+      </div>
+      <div class="reveal">
+        <svg class="w-12 h-12 text-forest" aria-hidden="true"><use href="#ic-pillar"/></svg>
+        <h3 class="mt-6 font-semibold text-ink text-xl">Szakmai párbeszéd</h3>
+        <p class="mt-3 text-[16px] text-ink/75 leading-[1.65]">
+          Eltökélt szándékunk a kormányzati munka támogatása. Kezdeményezzük a Kormányzat
+          és az MTEF közötti szakmai párbeszéd mielőbbi elindítását.
+        </p>
+      </div>
+      <div class="reveal">
+        <svg class="w-12 h-12 text-ink" aria-hidden="true"><use href="#ic-handshake"/></svg>
+        <h3 class="mt-6 font-semibold text-ink text-xl">Összehangolás</h3>
+        <p class="mt-3 text-[16px] text-ink/75 leading-[1.65]">
+          A tűzvédelem három hagyományos alappillérének — a tűzmegelőzésnek, a tűzoltásnak
+          és a tűzesetek vizsgálatának — összehangolt működtetése.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 6. HÁROM PILLÉR (sötét) ============== -->
+<section class="relative py-20 sm:py-28 bg-ink text-white overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 opacity-10">
+    <svg class="absolute -left-20 top-10 w-[700px] text-fire" viewBox="0 0 400 600" aria-hidden="true">
+      <use href="#ff-silhouette"/>
+    </svg>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-fire mb-4">A tűzvédelem három alappillére</p>
+      <h2 class="font-bold tracking-tightish text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+        Egy ciklus, amelyben minden lépés visszacsatol.
+      </h2>
+    </div>
+
+    <div class="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 relative">
+      <!-- piros összekötő vonal (md+) -->
+      <div class="hidden md:block absolute left-0 right-0 top-[34px] h-px bg-fire/40" aria-hidden="true"></div>
+
+      <div class="relative reveal">
+        <div class="flex items-start gap-4">
+          <span class="font-mono text-fire text-sm tracking-wider">01</span>
+          <div class="h-px flex-1 bg-fire/40 mt-3 md:hidden"></div>
+        </div>
+        <h3 class="mt-5 font-semibold text-2xl">Tűzmegelőzés</h3>
+        <p class="mt-3 text-white/70 leading-[1.65] text-[15.5px]">
+          Mielőtt baj történne. Tervezés, szabályozás, oktatás, kockázatelemzés —
+          a láthatatlan munka, amely nélkül a többi sem működik.
+        </p>
+      </div>
+      <div class="relative reveal">
+        <div class="flex items-start gap-4">
+          <span class="font-mono text-fire text-sm tracking-wider">02</span>
+          <div class="h-px flex-1 bg-fire/40 mt-3 md:hidden"></div>
+        </div>
+        <h3 class="mt-5 font-semibold text-2xl">Tűzoltás</h3>
+        <p class="mt-3 text-white/70 leading-[1.65] text-[15.5px]">
+          Amikor mégis baj történik. Operatív beavatkozás, mentés, kárcsökkentés —
+          a látható, hős oldal, amelyet a társadalom felismer.
+        </p>
+      </div>
+      <div class="relative reveal">
+        <div class="flex items-start gap-4">
+          <span class="font-mono text-fire text-sm tracking-wider">03</span>
+          <div class="h-px flex-1 bg-fire/40 mt-3 md:hidden"></div>
+        </div>
+        <h3 class="mt-5 font-semibold text-2xl">Tűzesetvizsgálat</h3>
+        <p class="mt-3 text-white/70 leading-[1.65] text-[15.5px]">
+          Hogy tanuljunk belőle. Okfeltárás, adatgyűjtés, visszacsatolás a megelőzésbe —
+          itt zárul, és innen indul újra a kör.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7. HIVATALOS KÖZLEMÉNY ============== -->
+<section id="statement" class="py-20 sm:py-28 bg-sand paper-noise">
+  <article class="max-w-prose720 mx-auto px-5 sm:px-8">
+    <header class="mb-10 sm:mb-12 reveal">
+      <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-fire mb-5">Hivatalos közlemény</p>
+      <h2 class="font-bold tracking-tightish text-ink text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+        Megalakult a Magyar Tűzvédelmi Egyeztető Fórum
+      </h2>
+      <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13.5px] text-warmgray font-mono">
+        <span>Budapest · 2026. május 4. · 10:50</span>
+        <span class="hidden sm:inline text-line">|</span>
+        <span>Forrás: Nemzeti Közleménytár</span>
+      </div>
+      <div class="hu-stripe-soft w-32 mt-7"></div>
+    </header>
+
+    <div class="reveal text-[17.5px] leading-[1.75] text-ink/85 space-y-6">
+      <p class="dropcap">
+        Magyarországi tűzvédelem meghatározó civil szakmai szervezetei kezdeményezik a Kormányzat
+        és a Magyar Tűzvédelmi Egyeztető Fórum közötti szakmai párbeszéd mielőbbi elindítását.
+      </p>
+      <p>
+        A magyarországi tűzvédelem meghatározó civil szakmai szervezetei 2025. őszén együttműködési
+        megállapodást írtak alá. Ennek szerves folytatásaként 2026. április 29-én
+      </p>
+      <ul class="pl-1 space-y-1.5 text-ink/85">
+        <li>– a Magyar Tűzoltó Szövetség,</li>
+        <li>– a Magyar Mérnöki Kamara <span class="text-warmgray">(kapcsolattartó: Tűzvédelmi Tagozat)</span>,</li>
+        <li>– a Magyar Építész Kamara <span class="text-warmgray">(kapcsolattartó: Tűzvédelmi Tagozat)</span>,</li>
+        <li>– a TSZVSZ Magyar Tűzvédelmi Szövetség,</li>
+        <li>– az Építési Vállalkozók Országos Szakszövetsége <span class="text-warmgray">(kapcsolattartó: Tűzvédelmi Tagozat)</span> és</li>
+        <li>– a Tűzvédelmi Mérnökök Közhasznú Egyesülete</li>
+      </ul>
+      <p>
+        megalakították a Magyar Tűzvédelmi Egyeztető Fórumot, amelynek koordinátora
+        <strong class="text-ink">Gyapjas János</strong> (email:
+        <a href="mailto:info@mtef.hu" class="text-fire underline decoration-fire/40 underline-offset-4 hover:decoration-fire">info@mtef.hu</a>).
+      </p>
+      <p>
+        A Magyar Tűzvédelmi Egyeztető Fórum célja a magyarországi tűzvédelem modernizációja,
+        az emberi élet védelmének és a vagyonbiztonság javítása. Az előző években a tűzvédelem
+        aggasztóan elhanyagolt terület volt, amelynek fejlesztése jelentős nemzetgazdasági
+        előnyökkel jár, javítja a gazdasági versenyképességet, valamint a fenntarthatósági
+        célokat is szolgálja.
+      </p>
+      <p>
+        A magyarországi tűzvédelmi helyzet megújítását a jelenlegi szabályozási környezet
+        és államigazgatási struktúra akadályozza.
+      </p>
+      <p>
+        Eltökélt szándékunk a hazai tűzvédelem megújítása és a kormányzati munka támogatása.
+        Nélkülözhetetlen a tűzvédelem három hagyományos alappillérének: a tűzmegelőzésnek,
+        a tűzoltásnak és a tűzesetek vizsgálatának összehangolása, az ehhez szükséges
+        adatgyűjtések, vizsgálatok, szakmai párbeszédek és egyeztetések lefolytatása.
+      </p>
+      <p>
+        A kormányzati döntések megalapozásához különösen fontosnak tartjuk Magyarország
+        tűzvédelmi problématérképének elkészítését az ország ma még hiányzó tűzvédelmi
+        stratégiájának megalkotásához.
+      </p>
+      <p>
+        Közös céljaink eléréséhez kezdeményezzük a Kormányzat és a Magyar Tűzvédelmi
+        Egyeztető Fórum közötti szakmai párbeszéd mielőbbi elindítását.
+      </p>
+      <p class="font-serif italic text-warmgray pt-4">
+        Kelt Szent Flórián napjának előestéjén, 2026. május 3-án.
+      </p>
+    </div>
+
+    <!-- Letöltés + megosztás -->
+    <footer class="mt-12 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 reveal">
+      <a id="downloadPdf" href="mailto:info@mtef.hu?subject=MTEF%20k%C3%B6zlem%C3%A9ny%20PDF%20ig%C3%A9ny" class="inline-flex items-center gap-2 text-[14.5px] text-ink hover:text-fire transition-colors">
+        <svg class="w-4 h-4"><use href="#ic-pdf"/></svg>
+        Letöltés PDF-ben
+      </a>
+      <div class="flex items-center gap-2">
+        <span class="text-[13px] text-warmgray mr-1 font-mono uppercase tracking-wider">Megosztás</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=" id="shareLinkedIn" target="_blank" rel="noopener noreferrer" aria-label="Megosztás LinkedIn-en" class="w-9 h-9 rounded-full border border-line hover:border-ink/40 hover:text-fire flex items-center justify-center text-ink/70 transition-colors">
+          <svg class="w-4 h-4"><use href="#ic-linkedin"/></svg>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" id="shareFacebook" target="_blank" rel="noopener noreferrer" aria-label="Megosztás Facebookon" class="w-9 h-9 rounded-full border border-line hover:border-ink/40 hover:text-fire flex items-center justify-center text-ink/70 transition-colors">
+          <svg class="w-4 h-4"><use href="#ic-fb"/></svg>
+        </a>
+        <button type="button" id="copyLink" aria-label="Link másolása" class="w-9 h-9 rounded-full border border-line hover:border-ink/40 hover:text-fire flex items-center justify-center text-ink/70 transition-colors">
+          <svg class="w-4 h-4"><use href="#ic-link"/></svg>
+        </button>
+      </div>
+    </footer>
+  </article>
+</section>
+
+<!-- ============== 8. KAPCSOLAT ============== -->
+<section id="contact" class="py-20 sm:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <div class="reveal">
+      <p class="font-mono text-[11.5px] tracking-[0.2em] uppercase text-warmgray mb-4">Koordinátor</p>
+      <h2 class="font-bold tracking-tightish text-ink text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+        Kapcsolat.
+      </h2>
+    </div>
+
+    <div class="mt-10 sm:mt-14 flex flex-col sm:flex-row items-start gap-7 sm:gap-10 reveal">
+      <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-sand border border-line flex items-center justify-center shrink-0">
+        <span class="font-serif text-3xl sm:text-4xl text-ink">GJ</span>
+      </div>
+      <div class="flex-1">
+        <p class="text-[13px] font-mono uppercase tracking-wider text-warmgray">Koordinátor</p>
+        <p class="mt-1 font-semibold text-ink text-2xl sm:text-3xl tracking-tightish">Gyapjas János</p>
+        <a href="mailto:info@mtef.hu"
+           class="mt-3 inline-flex items-center gap-2 text-fire text-[16px] hover:underline underline-offset-4 decoration-fire/40">
+          <svg class="w-4 h-4"><use href="#ic-mail"/></svg>
+          info@mtef.hu
+        </a>
+        <p class="mt-5 text-[15.5px] text-ink/70 leading-relaxed max-w-md">
+          Sajtó- és szakmai megkeresések, együttműködési javaslatok.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== 9. FOOTER ============== -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <img src="logos/mtef.png" alt="MTEF" class="w-11 h-11 object-contain" loading="lazy"/>
+          <div class="leading-tight">
+            <p class="font-bold tracking-tightish">MTEF</p>
+            <p class="text-[12px] text-white/55 font-mono uppercase tracking-[0.15em]">Magyar Tűzvédelmi Egyeztető Fórum</p>
+          </div>
+        </div>
+        <p class="mt-6 font-serif italic text-white/70 text-[15px] leading-relaxed max-w-sm">
+          Együttműködés · Szakmaiság · Felelősség · Biztonság
+        </p>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="text-[12px] font-mono uppercase tracking-[0.18em] text-white/55">Alapító szervezetek</p>
+        <ul class="mt-4 space-y-2 text-[14.5px] text-white/80">
+          <li><a href="https://tuzoltoszovetseg.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Magyar Tűzoltó Szövetség</a></li>
+          <li><a href="https://www.mmk.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Magyar Mérnöki Kamara</a> <span class="text-white/50">— Tűzvédelmi Tagozat</span></li>
+          <li><a href="https://mek.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Magyar Építész Kamara</a> <span class="text-white/50">— Tűzvédelmi Tagozat</span></li>
+          <li><a href="https://www.tszvsz.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">TSZVSZ Magyar Tűzvédelmi Szövetség</a></li>
+          <li><a href="https://evosz.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">ÉVOSZ</a> <span class="text-white/50">— Tűzvédelmi Tagozat</span></li>
+          <li><a href="https://www.tmke.hu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Tűzvédelmi Mérnökök Közhasznú Egyesülete</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="text-[12px] font-mono uppercase tracking-[0.18em] text-white/55">Kapcsolat</p>
+        <a href="mailto:info@mtef.hu" class="mt-4 block text-[15px] hover:text-fire transition-colors">info@mtef.hu</a>
+        <p class="mt-2 text-[14px] text-white/55">Koordinátor: Gyapjas János</p>
+
+        <div class="mt-6 flex items-center gap-2">
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=" id="footerShareLinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors">
+            <svg class="w-4 h-4"><use href="#ic-linkedin"/></svg>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=" id="footerShareFacebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors">
+            <svg class="w-4 h-4"><use href="#ic-fb"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-[12.5px] text-white/50 font-mono">
+        © 2026 Magyar Tűzvédelmi Egyeztető Fórum
+      </p>
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-white/60">
+        <li><a href="adatvedelem.html" class="hover:text-white transition-colors">Adatvédelem</a></li>
+        <li><a href="impresszum.html" class="hover:text-white transition-colors">Impresszum</a></li>
+        <li><a href="mailto:info@mtef.hu" class="hover:text-white transition-colors">info@mtef.hu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="hu-stripe"></div>
+</footer>
+
+<script>
+  // Sticky nav háttér scroll után
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 16) nav.classList.add('nav-scrolled');
+    else nav.classList.remove('nav-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Megosztás linkek dinamikus URL-lel
+  const pageUrl = encodeURIComponent(window.location.href);
+  ['shareLinkedIn','shareFacebook','footerShareLinkedIn','footerShareFacebook'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (id.toLowerCase().includes('linkedin')) el.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl;
+    if (id.toLowerCase().includes('facebook')) el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+  });
+
+  // Link másolása
+  const copyBtn = document.getElementById('copyLink');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const original = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="text-[11px] font-mono">OK</span>';
+        setTimeout(() => { copyBtn.innerHTML = original; }, 1600);
+      } catch (e) { /* no-op */ }
+    });
+  }
+</script>
+
+</body>
+</html>
