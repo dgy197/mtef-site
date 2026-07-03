@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/hirek", "destination": "/hirek/index.html" },
+    { "source": "/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij", "destination": "/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html" },
+    { "source": "/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez", "destination": "/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez/index.html" },
+    { "source": "/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum", "destination": "/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

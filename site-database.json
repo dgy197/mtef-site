@@ -1,0 +1,165 @@
+{
+  "schema": "brainy.static-site-database.v1",
+  "site": {
+    "name": "Magyar Tűzvédelmi Egyeztető Fórum",
+    "shortName": "MTEF",
+    "productionUrl": "https://mtef.hu",
+    "projectPath": "/Users/openclaw/.openclaw/workspace/projects/mtef-site",
+    "platform": "Vercel prebuilt static output",
+    "deployCommand": "vercel deploy --prebuilt --prod --yes",
+    "validationCommand": "./validate.sh . && python3 scripts/asset-guard.py --site . --output .vercel/output/static",
+    "criticalInvariant": "Every local asset referenced by any HTML page must exist both in the source tree and in .vercel/output/static before production deploy. Missing /logos caused logo disappearance on 2026-05-16."
+  },
+  "routes": [
+    {
+      "path": "/",
+      "source": "index.html",
+      "output": "index.html",
+      "canonical": "https://mtef.hu/"
+    },
+    {
+      "path": "/hirek",
+      "source": "hirek/index.html",
+      "output": "hirek/index.html",
+      "canonical": "https://mtef.hu/hirek"
+    },
+    {
+      "path": "/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij",
+      "source": "kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html",
+      "output": "kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html"
+    },
+    {
+      "path": "/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum",
+      "source": "kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/index.html",
+      "output": "kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/index.html"
+    },
+    {
+      "path": "/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez",
+      "source": "kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez/index.html",
+      "output": "kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez/index.html"
+    },
+    {
+      "path": "/adatvedelem",
+      "source": "adatvedelem.html",
+      "output": "adatvedelem.html"
+    },
+    {
+      "path": "/impresszum",
+      "source": "impresszum.html",
+      "output": "impresszum.html"
+    },
+    {
+      "path": "/sitemap.xml",
+      "source": "sitemap.xml",
+      "output": "sitemap.xml"
+    },
+    {
+      "path": "/robots.txt",
+      "source": "robots.txt",
+      "output": "robots.txt"
+    }
+  ],
+  "criticalAssets": {
+    "brand": [
+      "logos/mtef.png",
+      "assets/brand/magyar-tuzvedelmi-egyezteto-forum-mtef-logo.png",
+      "mtef-logo-google.png"
+    ],
+    "homepageHero": [
+      "assets/hero-grafika-cutout.png",
+      "assets/hero-grafika.png"
+    ],
+    "partnerLogos": [
+      "logos/mtsz.png",
+      "logos/mmk.png",
+      "logos/mek.png",
+      "logos/tszvsz.png",
+      "logos/evosz.png",
+      "logos/tmke.png"
+    ],
+    "favicons": [
+      "favicon.ico",
+      "favicon-16x16.png",
+      "favicon-32x32.png",
+      "favicon-48x48.png",
+      "apple-touch-icon.png",
+      "android-chrome-192x192.png",
+      "android-chrome-512x512.png",
+      "site.webmanifest"
+    ],
+    "documents": [
+      "assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
+      "assets/documents/mtef-kozlemeny-2026-05-04.pdf",
+      "assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf",
+      "assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.docx"
+    ],
+    "legacyDuplicateAssetsToPreserveUntilRefactor": [
+      "assets/logo-mmk.png",
+      "assets/logo-mtef.png",
+      "assets/logo-mtsz.png",
+      "assets/logo-tszvsz.png",
+      "assets/mmk-logo.png",
+      "assets/mtef-logo.png",
+      "assets/mtsz-logo.png",
+      "assets/logos/mmk.png",
+      "assets/logos/mtef.png",
+      "assets/logos/mtsz.png",
+      "assets/og-image.png"
+    ]
+  },
+  "htmlAssetRefsCurrent": {
+    "index.html": [
+      "/apple-touch-icon.png?v=20260514b",
+      "/assets/documents/mtef-kozlemeny-2026-05-04.pdf",
+      "/favicon-16x16.png?v=20260514b",
+      "/favicon-32x32.png?v=20260514b",
+      "/favicon-48x48.png?v=20260514b",
+      "/favicon.ico?v=20260514b",
+      "assets/hero-grafika-cutout.png",
+      "logos/evosz.png",
+      "logos/mek.png",
+      "logos/mmk.png",
+      "logos/mtef.png",
+      "logos/mtsz.png",
+      "logos/tmke.png",
+      "logos/tszvsz.png"
+    ],
+    "hirek/index.html": [
+      "/logos/mtef.png",
+      "/assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.docx",
+      "/assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf",
+      "/assets/documents/mtef-kozlemeny-2026-05-04.pdf",
+      "/favicon.ico?v=20260514b"
+    ],
+    "kozlemenyek/*/index.html": [
+      "/logos/mtef.png",
+      "/assets/documents/*.pdf",
+      "/assets/documents/*.docx",
+      "/favicon.ico?v=20260514b"
+    ]
+  },
+  "preDeployChecklist": [
+    "Run ./validate.sh .",
+    "Refresh .vercel/output/static from source or ensure copied asset dirs are current",
+    "Run python3 scripts/asset-guard.py --site . --output .vercel/output/static",
+    "Deploy with vercel deploy --prebuilt --prod --yes",
+    "Live-check /, /logos/mtef.png, all partner logos, hero image, /hirek, /sitemap.xml, /robots.txt"
+  ],
+  "lastKnownIncident": {
+    "date": "2026-05-16",
+    "symptom": "MTEF and partner logos disappeared on mtef.hu",
+    "cause": "HTML referenced /logos/*.png but .vercel/output/static/logos was missing from prebuilt deployment output.",
+    "fix": "Copied root logos directory into public/logos and .vercel/output/static/logos; deployed production; verified all logo URLs returned 200.",
+    "prevention": "asset-guard.py must run before every MTEF production deploy."
+  },
+  "contentUpdateRunbook": {
+    "humanReadable": "CONTENT-UPDATE-RUNBOOK.md",
+    "machineReadable": "content-update-runbook.json",
+    "goldenRule": "Never update only one page. A content change must propagate to content/news.json, article page, homepage cards, /hirek list, sitemap, schema and documents.",
+    "mandatoryCommands": [
+      "node scripts/generate-news.mjs",
+      "./validate.sh .",
+      "python3 scripts/asset-guard.py --site . --output .vercel/output/static"
+    ]
+  }
+}

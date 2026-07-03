@@ -1,0 +1,22 @@
+{
+  "name": "mtef-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "mtef:mcp": "node mcp/mtef-cms-server.mjs",
+    "mtef:mcp:http": "node server/http-mcp-server.mjs",
+    "mtef:mcp:smoke": "node scripts/mtef-mcp-smoke.mjs",
+    "mtef:supabase:smoke": "node scripts/mtef-supabase-smoke.mjs",
+    "mtef:supabase:create-project": "node scripts/mtef-supabase-create-project.mjs",
+    "mtef:supabase:apply-migration": "node scripts/mtef-supabase-apply-migration.mjs",
+    "mtef:supabase:get-keys": "node scripts/mtef-supabase-get-keys.mjs",
+    "mtef:supabase:import-seed": "node scripts/mtef-supabase-import-seed.mjs",
+    "mtef:supabase:export": "node scripts/mtef-supabase-export.mjs --write",
+    "mtef:build-preview": "./scripts/build-preview-output.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  }
+}

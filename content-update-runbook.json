@@ -1,0 +1,105 @@
+{
+  "schema": "brainy.static-site-content-runbook.v1",
+  "site": "MTEF",
+  "productionUrl": "https://mtef.hu",
+  "purpose": "Single source reminder for adding/updating news, announcements, statements and downloadable documents on the static MTEF site.",
+  "goldenRule": "Never update only one page. A content change must propagate to content/news.json, the article page, homepage cards, news list, sitemap, schema and document assets where relevant.",
+  "contentTypes": {
+    "newsOrAnnouncement": {
+      "primaryDataFile": "content/news.json",
+      "generatedBy": "scripts/generate-news.mjs",
+      "requiredFields": ["id", "date", "displayDate", "category", "title", "excerpt", "url", "priority", "schemaType"],
+      "optionalFields": ["mmkUrl", "pdfUrl", "docxUrl"],
+      "idRule": "Use a stable lowercase kebab-case slug. It should match the URL final segment.",
+      "urlRule": "MTEF announcements currently live under /kozlemenyek/<id>.",
+      "orderingRule": "content/news.json is sorted by date descending by scripts/generate-news.mjs; newest must appear first on homepage and /hirek."
+    },
+    "articlePage": {
+      "directoryPattern": "kozlemenyek/<id>/index.html",
+      "mustContain": ["canonical URL", "title", "datePublished", "dateModified", "NewsArticle JSON-LD", "publisher logo", "full body text", "download buttons if documents exist", "links back to / and /hirek"],
+      "copyFromExisting": "For a new announcement, copy the nearest existing page under kozlemenyek/ and update every title/date/URL/schema/body/download reference."
+    },
+    "document": {
+      "directory": "assets/documents/",
+      "fileNameRule": "Use lowercase kebab-case, include year/date/topic if useful; avoid spaces and accents.",
+      "references": ["content/news.json pdfUrl/docxUrl", "article page download links", "article JSON-LD associatedMedia or encoding", "sitemap.xml via generator", "site-database.json criticalAssets.documents when durable/important"],
+      "verification": "asset-guard.py must verify documents exist in source and Vercel output."
+    }
+  },
+  "filesToEditForNewItem": [
+    {
+      "file": "content/news.json",
+      "action": "Add a new object with all required metadata and document links. Keep valid JSON."
+    },
+    {
+      "file": "kozlemenyek/<id>/index.html",
+      "action": "Create full static article/announcement page with SEO and schema."
+    },
+    {
+      "file": "assets/documents/<file>",
+      "action": "Copy PDF/DOCX/downloadables here if the item has attachments."
+    },
+    {
+      "file": "scripts/generate-news.mjs",
+      "action": "Usually no edit. It regenerates homepage cards, /hirek list and sitemap NEWS_SITEMAP block from content/news.json. Edit only if card/list template changes."
+    },
+    {
+      "file": "index.html",
+      "action": "Run generator to update <!-- NEWS_CARDS_START --> block. Also manually update top-level homepage JSON-LD itemList/schema if the new item should be represented there."
+    },
+    {
+      "file": "hirek/index.html",
+      "action": "Run generator to update <!-- NEWS_LIST_START --> block. Verify newest item is first."
+    },
+    {
+      "file": "sitemap.xml",
+      "action": "Run generator to update <!-- NEWS_SITEMAP_START --> block. Verify article and document URLs are included."
+    },
+    {
+      "file": "site-database.json",
+      "action": "Add durable/critical documents or new stable route to routes/criticalAssets when relevant."
+    },
+    {
+      "file": "SITE-DATABASE.md",
+      "action": "Mirror important human-readable route/document changes."
+    }
+  ],
+  "updateCommands": [
+    "node scripts/generate-news.mjs",
+    "./validate.sh .",
+    "python3 scripts/asset-guard.py --site . --output .vercel/output/static"
+  ],
+  "preDeployChecklist": [
+    "New/changed item exists in content/news.json with correct date/title/excerpt/url.",
+    "Dedicated article page exists at kozlemenyek/<id>/index.html.",
+    "Article page canonical and JSON-LD use https://mtef.hu/<path>.",
+    "All PDF/DOCX links point to /assets/documents/... and files exist.",
+    "Homepage news cards regenerated and newest relevant item appears first.",
+    "/hirek list regenerated and newest item appears first.",
+    "sitemap.xml includes article and document URLs.",
+    "site-database.json/SITE-DATABASE.md updated when new stable route or durable document is added.",
+    "asset-guard passes before deploy."
+  ],
+  "postDeployLiveChecks": [
+    "https://mtef.hu/ contains new item title if it should appear on homepage.",
+    "https://mtef.hu/hirek contains new item title and correct ordering.",
+    "https://mtef.hu/kozlemenyek/<id> returns 200 and shows full content.",
+    "Each document URL returns 200 with expected content-type.",
+    "https://mtef.hu/sitemap.xml contains the new URLs.",
+    "All visible logos and hero assets still return 200."
+  ],
+  "knownManualHotspots": [
+    {
+      "file": "index.html",
+      "note": "scripts/generate-news.mjs updates the visible NEWS_CARDS block, but top-level structured data near the head may still need manual update for newest/high-value news."
+    },
+    {
+      "file": "kozlemenyek/<id>/index.html",
+      "note": "Article body is manual static HTML today; no generator creates full article pages yet."
+    },
+    {
+      "file": "site-database.json",
+      "note": "This is the site memory; keep it synchronized when new content becomes durable."
+    }
+  ]
+}

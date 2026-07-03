@@ -1,0 +1,23 @@
+{
+  "name": "Magyar Tűzvédelmi Egyeztető Fórum",
+  "short_name": "MTEF",
+  "description": "A Magyar Tűzvédelmi Egyeztető Fórum hivatalos weboldala.",
+  "lang": "hu-HU",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F8F6F2",
+  "theme_color": "#CD2A3E",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=20260514b",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=20260514b",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

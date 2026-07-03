@@ -1,0 +1,126 @@
+{
+  "schema": "mtef.directus.seed.v1",
+  "site": {
+    "site_name": "Magyar Tűzvédelmi Egyeztető Fórum",
+    "short_name": "MTEF",
+    "canonical_base_url": "https://mtef.hu",
+    "contact_email": "info@mtef.hu",
+    "logo_path": "logos/mtef.png"
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "status": "published",
+      "title": "Magyar Tűzvédelmi Egyeztető Fórum – MTEF | Tűzvédelmi szakmai együttműködés",
+      "seo_description": "A Magyar Tűzvédelmi Egyeztető Fórum (MTEF) a hazai tűzvédelmi szakmai szervezetek együttműködési platformja a magyarországi tűzvédelem modernizációjáért.",
+      "source_static_path": "index.html"
+    },
+    {
+      "slug": "hirek",
+      "path": "/hirek",
+      "status": "published",
+      "title": "Hírek és közlemények — Magyar Tűzvédelmi Egyeztető Fórum (MTEF)",
+      "seo_description": "A Magyar Tűzvédelmi Egyeztető Fórum (MTEF) legfrissebb hírei, közleményei és szakmai bejelentései a magyarországi tűzvédelem modernizációjáról.",
+      "source_static_path": "hirek/index.html"
+    }
+  ],
+  "documents": [
+    {
+      "slug": "mmk-30-ev-gyapjas-janos-photo",
+      "status": "published",
+      "title": "MMK 30 éves jubileumi ünnepség — Dr. Gyapjas János",
+      "kind": "image",
+      "source_path": "assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
+      "public_url": "/assets/uploads/mmk-30-ev-gyapjas-janos.jpg"
+    },
+    {
+      "slug": "mtef-kozlemeny-2026-05-04",
+      "status": "published",
+      "title": "MTEF közlemény – 2026. május 4.",
+      "kind": "pdf",
+      "source_path": "assets/documents/mtef-kozlemeny-2026-05-04.pdf",
+      "public_url": "/assets/documents/mtef-kozlemeny-2026-05-04.pdf"
+    },
+    {
+      "slug": "kozos-szakmai-alapvetes-magyar-tuzvedelem-2026-pdf",
+      "status": "published",
+      "title": "Közös szakmai alapvetés a magyar tűzvédelem korszerűsítéséhez – PDF",
+      "kind": "pdf",
+      "source_path": "assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf",
+      "public_url": "/assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf"
+    },
+    {
+      "slug": "kozos-szakmai-alapvetes-magyar-tuzvedelem-2026-docx",
+      "status": "published",
+      "title": "Közös szakmai alapvetés a magyar tűzvédelem korszerűsítéséhez – DOCX",
+      "kind": "docx",
+      "source_path": "assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.docx",
+      "public_url": "/assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.docx"
+    }
+  ],
+  "news": [
+    {
+      "slug": "30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij",
+      "status": "published",
+      "date": "2026-07-03",
+      "display_date": "2026. július 3.",
+      "category": "Elismerés",
+      "title": "30 éves a Magyar Mérnöki Kamara: Dr. Gyapjas János megkapta a Pap Zoltán nívódíjat",
+      "excerpt": "A Magyar Mérnöki Kamara 30 éves jubileumi ünnepségén Dr. Gyapjas János megkapta a Tűzvédelmi Tagozat Pap Zoltán nívódíját.",
+      "url": "/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij",
+      "mmk_url": "/hirek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/",
+      "seo_title": "Dr. Gyapjas János megkapta a Pap Zoltán nívódíjat — MTEF",
+      "seo_description": "A Magyar Mérnöki Kamara 30 éves jubileumi ünnepségén Dr. Gyapjas János megkapta a Tűzvédelmi Tagozat Pap Zoltán nívódíját.",
+      "body": "A Magyar Mérnöki Kamara 30 éves jubileumi ünnepségét az Öbölházban tartották. Az eseményen Dr. Gyapjas János megkapta a Tűzvédelmi Tagozat Pap Zoltán nívódíját.\n\nDr. Gyapjas János példaértékűen ötvözi mérnöki, hivatásos tűzoltói és tudományos tapasztalatait, a tűzesetek tanulságait a gyakorlat és a szabályozás számára is hasznosítható tudássá formálva.\n\nA Magyar Mérnöki Kamara Tűzvédelmi Tagozatának és Bács-Kiskun vármegyei szakcsoportjának alapítójaként, valamint meghatározó szakmai konferenciák, így a Tűzesetek vizsgálata és a Lakiteleki Szakmai Napok főszervezőjeként végzett kiemelkedő tudásmegosztó és közösségépítő munkájáért kapta meg a Tűzvédelmi Tagozat Pap Zoltán nívódíját.\n\ndr. Gyapjas János szakmai életútja kivételesen széles spektrumon kapcsolódik az épített környezet tűzvédelméhez, a tűzmegelőzéshez, a tűzoltási és tűzvizsgálati tapasztalatok mérnöki hasznosításához, valamint a tűzvédelmi szakmai közélet fejlesztéséhez. Pályafutását hivatásos tűzoltóként kezdte Bács-Kiskun vármegyében, majd jelentős vezetői, hatósági, iparbiztonsági és szakmai irányítási tapasztalatot szerzett. Munkája során országos jelentőségű beavatkozásokban, nagy kiterjedésű erdőtüzek, épülettüzek és árvízi védekezések kezelésében is részt vett, illetve több kiemelt beruházás, így például a kecskeméti Mercedes gyár tűzvédelmi-hatósági folyamatainak szakmai kezelésében is közreműködött.\n\nSzakmai felkészültségét a tűzvédelmi mérnöki és okleveles katasztrófavédelmi mérnöki végzettsége, további szakmai képesítései, tűzvizsgálói, iparbiztonsági, munkavédelmi és veszélyesáru-szállítással kapcsolatos ismeretei, valamint tudományos tevékenysége egyaránt alátámasztják. PhD-kutatási tevékenysége a tűzvédelem mérnöki módszereinek, a helyi sajátosságoknak és a tűzeseti tapasztalatok szakmai hasznosításának kérdésköréhez kapcsolódik. Ez a szemlélet különösen értékes a tűzvédelmi mérnöki gyakorlat számára, mert a beavatkozási, hatósági és tervezési tapasztalatokat nem elszigetelten, hanem egységes szakmai rendszerben értelmezi.\n\nGyapjas János munkásságának egyik legfontosabb értéke, hogy következetesen hidat épít a tűzoltás, a tűzmegelőzés, a tűzvizsgálat, a hatósági munka, a tervezői gyakorlat és a kivitelezési szereplők között. Szakmai megszólalásaiban és közéleti tevékenységében visszatérő alapelvként jelenik meg a tűzvédelem hármas egysége, valamint az a törekvés, hogy a tűzeseti tapasztalatok ne csupán utólagos tanulságként, hanem a jövőbeli mérnöki döntések, tervezési megoldások és kivitelezési folyamatok minőségét javító tudásként hasznosuljanak.\n\nKiemelkedő érdeme a tűzvédelmi szakmai közélet szervezése és fejlesztése. A Magyar Mérnöki Kamara Tűzvédelmi Tagozatának alapító tagjaként a tagozat megalakulása óta aktívan részt vesz a közös szakmai munka alakításában. Alapító elnöke a Bács-Kiskun Vármegyei Mérnöki Kamara Tűzvédelmi Szakcsoportjának, elnökségi tagja a Tűzvédelmi Mérnökök Közhasznú Egyesületének, továbbá kamarai és egyesületi tisztségeiben is következetesen a szakmai párbeszéd, a jó gyakorlatok megosztása és a tűzvédelmi mérnöki hivatás presztízsének erősítése érdekében dolgozik.\n\nKét országos jelentőségű szakmai konferenciasorozat alapító szervezőjeként különösen jelentős szerepet vállalt a hazai tűzvédelmi szakma tudásmegosztásában. A Tűzesetek vizsgálata, tapasztalatai konferencia és a Lakiteleki Tűzvédelmi Szakmai Napok mára a tűzvédelmi szakemberek széles körét megszólító, visszatérő, nagy szakmai érdeklődéssel kísért rendezvényekké váltak. E fórumok nemcsak előadások és továbbképzések helyszínei, hanem a hatósági, tervezői, kivitelezői, üzemeltetői és tudományos szereplők közötti érdemi szakmai párbeszéd fontos színterei is.\n\ndr. Gyapjas János rendszeres előadója hazai és nemzetközi szakmai, illetve tudományos rendezvényeknek. Előadásait a gyakorlati tapasztalat, a mérnöki szemlélet, a tűzesetekből levont tanulságok és a közérthető, ugyanakkor szakmailag megalapozott megközelítés jellemzi. Tevékenysége jelentős mértékben hozzájárul ahhoz, hogy a tűzvédelmi mérnöki gondolkodásban erősödjön az okszerűség, az elemző szemlélet, a tapasztalati tudás feldolgozása és a különböző szakterületek közötti együttműködés.\n\nSzakmai munkáját több elismerés is visszaigazolta, köztük a Rendkívüli Helytállásért Érdemjel arany fokozata, a Bács-Kiskun Vármegye Lakosságának Védelméért Díj, valamint további szakmai kitüntetések. Ezek az elismerések nem önmagukban, hanem egy következetes, hosszú távú, a tűzvédelmi szakma egészét szolgáló pálya részeként értelmezhetők.",
+      "image_url": "/assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
+      "image_alt": "A Magyar Mérnöki Kamara 30 éves jubileumi ünnepsége az Öbölházban",
+      "og_image_url": "/assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
+      "source_static_path": "kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html",
+      "documents": [
+        "mmk-30-ev-gyapjas-janos-photo"
+      ],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
+    {
+      "slug": "kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez",
+      "status": "published",
+      "date": "2026-05-14",
+      "display_date": "2026. május 14.",
+      "category": "Szakmai alapvetés",
+      "title": "Közös szakmai alapvetés a magyar tűzvédelem korszerűsítéséhez",
+      "excerpt": "A Magyar Tűzvédelmi Egyeztető Fórum közös szakmai alapvetése a hazai tűzvédelem korszerűsítésének alapelveiről, stratégiai céljairól és első lépéseiről.",
+      "url": "/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez",
+      "mmk_url": "/hirek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez/",
+      "seo_title": "Közös szakmai alapvetés a magyar tűzvédelem korszerűsítéséhez — MTEF",
+      "seo_description": "A Magyar Tűzvédelmi Egyeztető Fórum közös szakmai alapvetése a magyar tűzvédelem korszerűsítéséhez: alapelvek, stratégiai célok és javasolt első lépések.",
+      "source_static_path": "kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez/index.html",
+      "documents": [
+        "kozos-szakmai-alapvetes-magyar-tuzvedelem-2026-pdf",
+        "kozos-szakmai-alapvetes-magyar-tuzvedelem-2026-docx"
+      ],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
+    {
+      "slug": "megalakult-a-magyar-tuzvedelmi-egyezteto-forum",
+      "status": "published",
+      "date": "2026-05-04",
+      "display_date": "2026. május 4.",
+      "category": "Alapítási közlemény",
+      "title": "Megalakult a Magyar Tűzvédelmi Egyeztető Fórum",
+      "excerpt": "Hat meghatározó szakmai szervezet közös platformot hozott létre a hazai tűzvédelem modernizációjáért.",
+      "url": "/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum",
+      "mmk_url": "/hirek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/",
+      "seo_title": "Megalakult a Magyar Tűzvédelmi Egyeztető Fórum — MTEF közlemény",
+      "seo_description": "A Magyar Tűzvédelmi Egyeztető Fórum (MTEF) megalakításáról szóló hivatalos közlemény. Hat civil tűzvédelmi szakmai szervezet 2026. április 29-én létrehozta az MTEF-et a magyarországi tűzvédelem modernizációjáért.",
+      "source_static_path": "kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/index.html",
+      "documents": [
+        "mtef-kozlemeny-2026-05-04"
+      ],
+      "priority": 0.8,
+      "schema_type": "NewsArticle"
+    }
+  ]
+}
