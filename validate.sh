@@ -112,5 +112,25 @@ chk "robots.txt references sitemap" \
     grep -q 'Sitemap:' "$SITE/robots.txt"
 
 echo ""
+echo "--- Content-driven news integrity ---"
+while IFS=$'\t' read -r slug url title image_url; do
+    ARTICLE="$SITE${url}/index.html"
+    chk "article exists: $slug" test -f "$ARTICLE"
+    chk "article canonical: $slug" grep -q "https://mtef.hu${url}" "$ARTICLE"
+    chk "article schema: $slug" grep -q '"NewsArticle"' "$ARTICLE"
+    chk "article title: $slug" grep -Fq "$title" "$ARTICLE"
+    chk "hirek entry: $slug" grep -q "$url" "$SITE/hirek/index.html"
+    chk "sitemap entry: $slug" grep -q "https://mtef.hu${url}" "$SITE/sitemap.xml"
+    if [ -n "$image_url" ]; then
+        chk "article image: $slug" grep -q "$image_url" "$ARTICLE"
+        chk "image exists: $slug" test -f "$SITE${image_url}"
+    fi
+done < <(jq -r '.[] | [.id, .url, .title, (.imageUrl // "")] | @tsv' "$SITE/content/news.json")
+
+while IFS= read -r url; do
+    chk "homepage latest entry: $url" grep -q "$url" "$SITE/index.html"
+done < <(jq -r 'sort_by(.date) | reverse | .[0:4][] | .url' "$SITE/content/news.json")
+
+echo ""
 echo "=== Results: $PASS passed, $FAIL failed ==="
 [ $FAIL -eq 0 ] && exit 0 || exit 1

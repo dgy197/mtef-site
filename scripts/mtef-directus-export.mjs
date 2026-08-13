@@ -39,6 +39,7 @@ function mapNews(item) {
     imageUrl: item.image_url || item.imageUrl,
     imageAlt: item.image_alt || item.imageAlt,
     ogImageUrl: item.og_image_url || item.ogImageUrl,
+    externalLinks: item.external_links || item.externalLinks,
     priority: item.priority || 0.8,
     schemaType: item.schema_type || item.schemaType || 'NewsArticle'
   });

@@ -31,8 +31,7 @@ function listCard(item) {
       <a href="${esc(item.url)}" class="inline-flex items-center gap-2 text-fire text-[14.5px] font-medium hover:underline underline-offset-4 decoration-fire/40">
         Közlemény teljes szövege
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      ${downloads}
+      </a>${downloads ? `\n      ${downloads}` : ''}
     </div>
   </article>`;
 }
@@ -52,6 +51,7 @@ function statementPage(item) {
     const videoTitle = typeof video === 'string' ? 'Kapcsolódó videó' : (video.title || 'Kapcsolódó videó');
     return `<div class="my-8 rounded-2xl border border-line bg-white p-5"><p class="eyebrow text-[10px] text-fire mb-2 font-semibold">Videó</p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="text-fire font-medium hover:underline underline-offset-4">${esc(videoTitle)}</a></div>`;
   }).join('\n      ');
+  const externalLinksBlock = (item.externalLinks || []).length ? `<div class="my-8 rounded-2xl border border-line bg-white p-5"><p class="eyebrow text-[10px] text-fire mb-3 font-semibold">Kapcsolódó tartalom</p>${item.externalLinks.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer" class="block text-fire font-medium hover:underline underline-offset-4">${esc(link.title || link.url)}</a>`).join('\n        ')}</div>` : '';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': item.schemaType || 'NewsArticle',
@@ -130,15 +130,12 @@ function statementPage(item) {
       <div class="eyebrow mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-warmgray font-medium"><span>${esc(item.displayDate || item.date)}</span><span class="hidden sm:inline text-line">|</span><span>Kiadta: a Magyar Tűzvédelmi Egyeztető Fórum</span></div>
       <div class="hu-stripe-soft w-32 mt-7"></div>
     </header>
-    ${mediaBlock}
-    <div class="editorial text-ink/85 space-y-6 sm:space-y-7">
+${mediaBlock ? `    ${mediaBlock}\n` : ''}    <div class="editorial text-ink/85 space-y-6 sm:space-y-7">
       ${String(body).split(/\n{2,}/).map(p => `<p>${esc(p)}</p>`).join('\n      ')}
     </div>
-    ${videoBlock}
-    <footer class="mt-12 pt-8 border-t border-line">
+${videoBlock ? `    ${videoBlock}\n` : ''}${externalLinksBlock ? `    ${externalLinksBlock}\n` : ''}    <footer class="mt-12 pt-8 border-t border-line">
       <div class="flex flex-wrap items-center gap-4">
-        ${downloads}
-        <a href="mailto:info@mtef.hu" class="inline-flex items-center gap-2 text-[14.5px] font-medium text-fire hover:underline underline-offset-4 decoration-fire/40">info@mtef.hu</a>
+${downloads ? `        ${downloads}\n` : ''}        <a href="mailto:info@mtef.hu" class="inline-flex items-center gap-2 text-[14.5px] font-medium text-fire hover:underline underline-offset-4 decoration-fire/40">info@mtef.hu</a>
         <a href="/" class="inline-flex items-center gap-2 text-[14.5px] font-medium text-ink/60 hover:text-fire transition-colors">← Vissza a főoldalra</a>
         <a href="/hirek" class="inline-flex items-center gap-2 text-[14.5px] font-medium text-ink/60 hover:text-fire transition-colors">Összes közlemény</a>
       </div>
@@ -159,11 +156,7 @@ function replaceBetween(text, startMarker, endMarker, replacement) {
 }
 
 let index = readFileSync('index.html', 'utf8');
-const homeCards = sorted.slice(0, 2).map(homeCard).join('\n\n') + `\n\n      <article class="bg-white/80 border border-dashed border-line rounded-2xl p-6 sm:p-7 reveal">
-        <p class="eyebrow text-[10px] text-warmgray mb-4 font-semibold">Előkészítés alatt</p>
-        <h3 class="text-xl font-semibold leading-snug text-ink">Szakmai egyeztetések és állásfoglalások</h3>
-        <p class="mt-4 text-[15px] leading-relaxed text-warmgray">A későbbi szakmai hírek, egyeztetések és állásfoglalások itt jelennek meg, önálló, hivatkozható oldalakkal.</p>
-      </article>`;
+const homeCards = sorted.slice(0, 4).map(homeCard).join('\n\n');
 index = replaceBetween(index, '<!-- NEWS_CARDS_START -->', '<!-- NEWS_CARDS_END -->', homeCards);
 writeFileSync('index.html', index);
 

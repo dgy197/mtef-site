@@ -20,6 +20,9 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 - `/` → `index.html`
 - `/hirek` → `hirek/index.html`
+- `/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia` → konferenciahír
+- `/kozlemenyek/mabisz-csatlakozik-az-mtef-hez` → MABISZ-csatlakozási hír
+- `/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia` → akadémiai szakmai nap híre
 - `/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij` → jubileumi hír és laudáció
 - `/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum` → közlemény oldal
 - `/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez` → közös szakmai alapvetés oldal
@@ -63,6 +66,9 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 ### Dokumentumok
 
+- `assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg`
+- `assets/uploads/mabisz-magyar-biztositok-szovetsege.png`
+- `assets/uploads/magyar-tuzvedelmi-akademia.png`
 - `assets/uploads/mmk-30-ev-gyapjas-janos.jpg`
 - `assets/documents/mtef-kozlemeny-2026-05-04.pdf`
 - `assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf`

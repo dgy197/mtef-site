@@ -24,6 +24,21 @@
       "canonical": "https://mtef.hu/hirek"
     },
     {
+      "path": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia",
+      "source": "kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html",
+      "output": "kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html"
+    },
+    {
+      "path": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez",
+      "source": "kozlemenyek/mabisz-csatlakozik-az-mtef-hez/index.html",
+      "output": "kozlemenyek/mabisz-csatlakozik-az-mtef-hez/index.html"
+    },
+    {
+      "path": "/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia",
+      "source": "kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia/index.html",
+      "output": "kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia/index.html"
+    },
+    {
       "path": "/kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij",
       "source": "kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html",
       "output": "kozlemenyek/30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij/index.html"
@@ -88,6 +103,9 @@
       "site.webmanifest"
     ],
     "documents": [
+      "assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg",
+      "assets/uploads/mabisz-magyar-biztositok-szovetsege.png",
+      "assets/uploads/magyar-tuzvedelmi-akademia.png",
       "assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
       "assets/documents/mtef-kozlemeny-2026-05-04.pdf",
       "assets/documents/kozos-szakmai-alapvetes-magyar-tuzvedelem-2026.pdf",

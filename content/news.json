@@ -1,5 +1,26 @@
 [
   {
+    "id": "tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia",
+    "date": "2026-07-24",
+    "displayDate": "2026. július 24.",
+    "category": "Konferencia",
+    "title": "Tűzesetekből tanulni – az MTEF koordinátora vezette a X. Tűzesetek vizsgálata konferenciát",
+    "excerpt": "A konferencia a tűzesetekből származó tapasztalatok rendszerszintű feldolgozását és visszacsatolását állította középpontba.",
+    "url": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia",
+    "body": "2026. június 25-én Kecskeméten, a Neumann János Egyetemen rendezték meg a X. Tűzesetek vizsgálata, tapasztalatai konferenciát, amely immár tizedik alkalommal teremtett fórumot a tűzesetekhez kapcsolódó tűzoltási, hatósági, mérnöki és szakértői tapasztalatok feldolgozására. A konferencia levezető elnöke Dr. Gyapjas János PhD, a Magyar Tűzvédelmi Egyeztető Fórum koordinátora volt. Nyitó gondolataiban és szakmai előadásában is a tűzesetekből történő rendszerszintű tanulás fontosságát hangsúlyozta. A konferencia egyik meghatározó üzenete szerint a tűzvizsgálat valódi értéke nem csupán a tűz keletkezési okának feltárásában rejlik: a tapasztalatokat vissza kell csatolni a szabályozásba, a tervezésbe, az üzemeltetésbe, a tűzoltásba és a szakemberképzésbe.\n\nA program széles szakmai spektrumot ölelt fel: szó volt többek között a tűzvizsgálati gyakorlat és képzés fejlesztéséről, a jogszabályi megfelelés mögött fennmaradó kockázatokról, a biztosítói kockázatértékelésről, a jelentős és halálos tűzesetek visszatérő mintázatairól, a lítiumion-akkumulátorok tüzeiről, hulladék- és erdőtüzekről, valamint a tűzoltók beavatkozás utáni egészségvédelméről.\n\nA konferencia előadásai és azok szakmai összefoglalói a Védelem Online felületén elérhetők.",
+    "imageUrl": "/assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg",
+    "imageAlt": "A X. Tűzesetek vizsgálata, tapasztalatai konferencia a Neumann János Egyetemen",
+    "ogImageUrl": "/assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg",
+    "externalLinks": [
+      {
+        "url": "https://vedelem.hu/hirek/0/4751-x-tuzesetek-vizsgalata-tapasztalatai-konferencia-%E2%80%93-az-eloadasok",
+        "title": "A konferencia előadásai és szakmai összefoglalói – Védelem Online"
+      }
+    ],
+    "priority": 0.9,
+    "schemaType": "NewsArticle"
+  },
+  {
     "id": "30-eves-a-magyar-mernoki-kamara-gyapjas-janos-pap-zoltan-nivodij",
     "date": "2026-07-03",
     "displayDate": "2026. július 3.",
@@ -12,6 +33,42 @@
     "imageUrl": "/assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
     "imageAlt": "A Magyar Mérnöki Kamara 30 éves jubileumi ünnepsége az Öbölházban",
     "ogImageUrl": "/assets/uploads/mmk-30-ev-gyapjas-janos.jpg",
+    "priority": 0.9,
+    "schemaType": "NewsArticle"
+  },
+  {
+    "id": "mabisz-csatlakozik-az-mtef-hez",
+    "date": "2026-06-24",
+    "displayDate": "2026. június 24.",
+    "category": "Szakmai együttműködés",
+    "title": "Újabb szakmai partnerrel bővül az MTEF – csatlakozik a MABISZ",
+    "excerpt": "A Magyar Biztosítók Szövetsége bejelentette csatlakozási szándékát az MTEF-hez, tovább szélesítve a szakmai együttműködést.",
+    "url": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez",
+    "body": "A Magyar Biztosítók Szövetsége (MABISZ) bejelentette csatlakozási szándékát a Magyar Tűzvédelmi Egyeztető Fórumhoz. A MABISZ kiemelt feladatának tekinti a tűzbiztonsági kultúra fejlesztését, a tűzkockázatok azonosítását és értékelését, valamint a megelőzés és a kárenyhítés erősítését. A csatlakozás újabb fontos lépés a tűzvédelem különböző szereplői közötti szakmai együttműködés szélesítésében.\n\nAz együttműködés a közös szakmai munkában is megjelenik: a MABISZ a Magyar Tűzvédelmi Egyeztető Fórummal együtt a X. Tűzesetek vizsgálata, tapasztalatai konferencia társszervezője. A konferencia középpontjában a tűzesetekből származó tűzoltási, hatósági, mérnöki és szakértői tapasztalatok feldolgozása, valamint ezek hasznosítása áll a tűzoltás és a tűzmegelőzés fejlesztése érdekében.\n\nAjánljuk a konferenciát valamennyi tűzvédelemmel, tűzvizsgálattal és kockázatkezeléssel foglalkozó szakember figyelmébe. A rendezvény 2026. június 25-én Kecskeméten, a Neumann János Egyetemen, valamint online követhető. A részvétel ingyenes, de előzetes regisztrációhoz kötött.",
+    "imageUrl": "/assets/uploads/mabisz-magyar-biztositok-szovetsege.png",
+    "imageAlt": "A Magyar Biztosítók Szövetsége, a MABISZ logója",
+    "ogImageUrl": "/assets/uploads/mabisz-magyar-biztositok-szovetsege.png",
+    "externalLinks": [
+      {
+        "url": "https://vedelem.hu/hirek/0/4717-x-tuzesetek-vizsgalata-tapasztalatai-konferencia",
+        "title": "X. Tűzesetek vizsgálata, tapasztalatai konferencia – Védelem Online"
+      }
+    ],
+    "priority": 0.9,
+    "schemaType": "NewsArticle"
+  },
+  {
+    "id": "kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia",
+    "date": "2026-05-28",
+    "displayDate": "2026. május 28.",
+    "category": "Szakmai esemény",
+    "title": "Kockázatalapú tűzvédelem és szakmai összefogás – az MTEF is bemutatkozott a Magyar Tűzvédelmi Akadémia szakmai napján",
+    "excerpt": "Az MTEF a Magyar Tűzvédelmi Akadémia szakmai napján mutatta be céljait és a szakmai együttműködésben vállalt szerepét.",
+    "url": "/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia",
+    "body": "A Magyar Tűzvédelmi Akadémia 2026. május 27-i szakmai napja a tűzvédelmi kockázatok felismerését, értékelését és kezelését állította középpontba. A rendezvény nyitányában a Magyar Tűzvédelmi Egyeztető Fórum (MTEF) koordinátora is köszöntötte a résztvevőket, és röviden bemutatta a közelmúltban megalakult Fórum létrejöttét, céljait és a szakmai együttműködés erősítésében vállalt szerepét.\n\nA konferencia előadásai arra hívták fel a figyelmet, hogy a gyors technológiai és társadalmi változások mellett a tűzbiztonság már nem kezelhető pusztán jogszabályi megfelelésként: nagyobb szerepet kell kapnia a kockázatalapú gondolkodásnak, a rendszerszemléletnek, a szakmai kompetenciának és a különböző szereplők együttműködésének. A program a helyi sajátosságoktól és a tűzoltói elérhetőségtől az új energetikai technológiákon, a beruházások és kivitelezés kockázatain át a biztosítási szektor lehetséges szerepéig számos aktuális kérdést érintett.\n\nA rendezvény egyik fontos összegző üzenete éppen az volt, amely az MTEF létrehozását is indokolta: a korszerű tűzvédelem problémái csak a szakmai szereplők közötti érdemi párbeszéddel, együttműködéssel és közös felelősségvállalással kezelhetők eredményesen.",
+    "imageUrl": "/assets/uploads/magyar-tuzvedelmi-akademia.png",
+    "imageAlt": "A Magyar Tűzvédelmi Akadémia logója",
+    "ogImageUrl": "/assets/uploads/magyar-tuzvedelmi-akademia.png",
     "priority": 0.9,
     "schemaType": "NewsArticle"
   },
