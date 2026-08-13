@@ -7,8 +7,8 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 - Site: Magyar Tűzvédelmi Egyeztető Fórum (MTEF)
 - Production: https://mtef.hu
 - Projekt: `/Users/openclaw/.openclaw/workspace/projects/mtef-site`
-- Platform: Vercel prebuilt static output
-- Deploy: `vercel deploy --prebuilt --prod --yes`
+- Platform: Vercel statikus oldal; prebuilt output lokális preview/asset-ellenőrzéshez
+- Deploy: `./scripts/deploy-production-clean.sh` (commitolt Git-pillanatképből)
 
 ## Kritikus invariant
 
@@ -79,7 +79,7 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 ```bash
 ./validate.sh .
 python3 scripts/asset-guard.py --site . --output .vercel/output/static
-vercel deploy --prebuilt --prod --yes
+./scripts/deploy-production-clean.sh
 ```
 
 Live check deploy után:

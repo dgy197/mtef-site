@@ -166,7 +166,7 @@ python3 scripts/asset-guard.py --site . --output .vercel/output/static
 Ha production deploy is kell:
 
 ```bash
-vercel deploy --prebuilt --prod --yes
+./scripts/deploy-production-clean.sh
 ```
 
 ## 10. Deploy utáni live check

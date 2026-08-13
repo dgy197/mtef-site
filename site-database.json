@@ -5,8 +5,8 @@
     "shortName": "MTEF",
     "productionUrl": "https://mtef.hu",
     "projectPath": "/Users/openclaw/.openclaw/workspace/projects/mtef-site",
-    "platform": "Vercel prebuilt static output",
-    "deployCommand": "vercel deploy --prebuilt --prod --yes",
+    "platform": "Vercel static site; prebuilt output is local preview/asset validation only",
+    "deployCommand": "./scripts/deploy-production-clean.sh",
     "validationCommand": "./validate.sh . && python3 scripts/asset-guard.py --site . --output .vercel/output/static",
     "criticalInvariant": "Every local asset referenced by any HTML page must exist both in the source tree and in .vercel/output/static before production deploy. Missing /logos caused logo disappearance on 2026-05-16."
   },
@@ -160,7 +160,7 @@
     "Run ./validate.sh .",
     "Refresh .vercel/output/static from source or ensure copied asset dirs are current",
     "Run python3 scripts/asset-guard.py --site . --output .vercel/output/static",
-    "Deploy with vercel deploy --prebuilt --prod --yes",
+    "Deploy the committed snapshot with ./scripts/deploy-production-clean.sh",
     "Live-check /, /logos/mtef.png, all partner logos, hero image, /hirek, /sitemap.xml, /robots.txt"
   ],
   "lastKnownIncident": {

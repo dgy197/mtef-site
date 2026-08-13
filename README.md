@@ -32,10 +32,12 @@ Production deploy előtt kötelező:
 ```bash
 ./validate.sh .
 python3 scripts/asset-guard.py --site . --output .vercel/output/static
-vercel deploy --prebuilt --prod --yes
+./scripts/deploy-production-clean.sh
 ```
 
 Az `asset-guard.py` azért kötelező, mert 2026-05-16-án a HTML `logos/*.png` képekre hivatkozott, de a Vercel prebuilt outputból hiányzott a `/logos` mappa, ezért eltűntek a logók productionben.
+
+Az éles deploy mindig a commitolt Git-pillanatképből készül. A script kizárja a lokális CMS-tesztfájlokat, és a Vercel normál statikus builderét használja; a prebuilt output csak lokális preview/asset-ellenőrzésre szolgál.
 
 
 ## GitHub + Vercel
