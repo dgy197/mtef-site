@@ -27,6 +27,38 @@
   ],
   "documents": [
     {
+      "slug": "sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10",
+      "status": "published",
+      "title": "Sajókápolnai vegetációtűz aktív tűzfrontja – drónfelvétel",
+      "kind": "image",
+      "source_path": "assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
+      "public_url": "/assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg"
+    },
+    {
+      "slug": "szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05",
+      "status": "published",
+      "title": "Székesfehérvári vegetációtűz és a közeli lakóövezet",
+      "kind": "image",
+      "source_path": "assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg",
+      "public_url": "/assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg"
+    },
+    {
+      "slug": "bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29",
+      "status": "published",
+      "title": "A bugaci erdőtűz füstfáklyája – Aqua/MODIS műholdkép",
+      "kind": "image",
+      "source_path": "assets/uploads/bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29.jpg",
+      "public_url": "/assets/uploads/bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29.jpg"
+    },
+    {
+      "slug": "szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05",
+      "status": "published",
+      "title": "Tűzoltóegységek a székesfehérvári tűz területén",
+      "kind": "image",
+      "source_path": "assets/uploads/szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05.jpg",
+      "public_url": "/assets/uploads/szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05.jpg"
+    },
+    {
       "slug": "x-tuzesetek-vizsgalata-konferencia-2026-photo",
       "status": "published",
       "title": "X. Tűzesetek vizsgálata, tapasztalatai konferencia – fotó",
@@ -84,6 +116,28 @@
     }
   ],
   "news": [
+    {
+      "slug": "a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania",
+      "status": "published",
+      "date": "2026-08-14",
+      "display_date": "2026. augusztus 14.",
+      "category": "Szakmai közlemény",
+      "title": "A tűzkockázat nő – a felkészülésnek is lépést kell tartania",
+      "excerpt": "Az erdő- és vegetációtűz-védelem a klímaváltozáshoz való alkalmazkodás és a települések ellenálló képességének egyik kulcskérdése.",
+      "url": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania",
+      "image_url": "/assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
+      "image_alt": "A mintegy 450 hektárt érintő sajókápolnai vegetációtűz aktív tűzfrontja drónfelvételen",
+      "og_image_url": "/assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
+      "source_static_path": "kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html",
+      "documents": [
+        "sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10",
+        "szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05",
+        "bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29",
+        "szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05"
+      ],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
     {
       "slug": "tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia",
       "status": "published",

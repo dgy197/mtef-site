@@ -20,6 +20,7 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 - `/` → `index.html`
 - `/hirek` → `hirek/index.html`
+- `/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania` → erdő- és vegetációtűz-kockázati szakmai közlemény
 - `/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia` → konferenciahír
 - `/kozlemenyek/mabisz-csatlakozik-az-mtef-hez` → MABISZ-csatlakozási hír
 - `/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia` → akadémiai szakmai nap híre
@@ -66,6 +67,10 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 ### Dokumentumok
 
+- `assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg`
+- `assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg`
+- `assets/uploads/bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29.jpg`
+- `assets/uploads/szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05.jpg`
 - `assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg`
 - `assets/uploads/mabisz-magyar-biztositok-szovetsege.png`
 - `assets/uploads/magyar-tuzvedelmi-akademia.png`

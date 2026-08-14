@@ -5,6 +5,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/hirek", "destination": "/hirek/index.html" },
+    { "source": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania", "destination": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html" },
     { "source": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia", "destination": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html" },
     { "source": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez", "destination": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez/index.html" },
     { "source": "/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia", "destination": "/kozlemenyek/kockazatalapu-tuzvedelem-mtef-magyar-tuzvedelmi-akademia/index.html" },

@@ -24,6 +24,11 @@
       "canonical": "https://mtef.hu/hirek"
     },
     {
+      "path": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania",
+      "source": "kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html",
+      "output": "kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html"
+    },
+    {
       "path": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia",
       "source": "kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html",
       "output": "kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html"
@@ -103,6 +108,10 @@
       "site.webmanifest"
     ],
     "documents": [
+      "assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
+      "assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg",
+      "assets/uploads/bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29.jpg",
+      "assets/uploads/szekesfehervar-tuzoltoegysegek-beavatkozas-2026-08-05.jpg",
       "assets/uploads/x-tuzesetek-vizsgalata-konferencia-2026.jpg",
       "assets/uploads/mabisz-magyar-biztositok-szovetsege.png",
       "assets/uploads/magyar-tuzvedelmi-akademia.png",
@@ -129,6 +138,7 @@
     "index.html": [
       "/apple-touch-icon.png?v=20260514b",
       "/assets/documents/mtef-kozlemeny-2026-05-04.pdf",
+      "/assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
       "/favicon-16x16.png?v=20260514b",
       "/favicon-32x32.png?v=20260514b",
       "/favicon-48x48.png?v=20260514b",
@@ -153,6 +163,7 @@
       "/logos/mtef.png",
       "/assets/documents/*.pdf",
       "/assets/documents/*.docx",
+      "/assets/uploads/*.jpg",
       "/favicon.ico?v=20260514b"
     ]
   },
