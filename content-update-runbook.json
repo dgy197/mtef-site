@@ -16,7 +16,7 @@
     },
     "articlePage": {
       "directoryPattern": "kozlemenyek/<id>/index.html",
-      "mustContain": ["canonical URL", "title", "datePublished", "dateModified", "NewsArticle JSON-LD", "publisher logo", "full body text", "download buttons if documents exist", "links back to / and /hirek"],
+      "mustContain": ["canonical URL", "title", "datePublished", "dateModified", "NewsArticle JSON-LD", "publisher logo", "full body text", "download buttons if documents exist", "links back to / and /hirek", "cookieless Vercel Web Analytics script"],
       "copyFromExisting": "For a new announcement, copy the nearest existing page under kozlemenyek/ and update every title/date/URL/schema/body/download reference."
     },
     "document": {

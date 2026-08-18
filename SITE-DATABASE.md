@@ -8,6 +8,7 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 - Production: https://mtef.hu
 - Projekt: `/Users/openclaw/.openclaw/workspace/projects/mtef-site`
 - Platform: Vercel statikus oldal; prebuilt output lokális preview/asset-ellenőrzéshez
+- Forgalommérés: Vercel Web Analytics, sütimentes és összesített mérés
 - Deploy: `./scripts/deploy-production-clean.sh` (commitolt Git-pillanatképből)
 
 ## Kritikus invariant
@@ -29,6 +30,7 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 - `/kozlemenyek/kozos-szakmai-alapvetes-a-magyar-tuzvedelem-korszerusitesehez` → közös szakmai alapvetés oldal
 - `/adatvedelem` → `adatvedelem.html`
 - `/impresszum` → `impresszum.html`
+- `/sutik` → `sutik.html`
 - `/sitemap.xml`
 - `/robots.txt`
 
@@ -96,6 +98,8 @@ Live check deploy után:
 - `https://mtef.hu/hirek`
 - `https://mtef.hu/sitemap.xml`
 - `https://mtef.hu/robots.txt`
+- `https://mtef.hu/sutik`
+- `https://mtef.hu/_vercel/insights/script.js`
 
 ## Megjegyzés
 

@@ -6,6 +6,7 @@
     "productionUrl": "https://mtef.hu",
     "projectPath": "/Users/openclaw/.openclaw/workspace/projects/mtef-site",
     "platform": "Vercel static site; prebuilt output is local preview/asset validation only",
+    "analytics": "Vercel Web Analytics; cookieless aggregate traffic measurement; every production HTML route includes /_vercel/insights/script.js",
     "deployCommand": "./scripts/deploy-production-clean.sh",
     "validationCommand": "./validate.sh . && python3 scripts/asset-guard.py --site . --output .vercel/output/static",
     "criticalInvariant": "Every local asset referenced by any HTML page must exist both in the source tree and in .vercel/output/static before production deploy. Missing /logos caused logo disappearance on 2026-05-16."
@@ -67,6 +68,12 @@
       "path": "/impresszum",
       "source": "impresszum.html",
       "output": "impresszum.html"
+    },
+    {
+      "path": "/sutik",
+      "source": "sutik.html",
+      "output": "sutik.html",
+      "canonical": "https://mtef.hu/sutik"
     },
     {
       "path": "/sitemap.xml",
@@ -172,7 +179,7 @@
     "Refresh .vercel/output/static from source or ensure copied asset dirs are current",
     "Run python3 scripts/asset-guard.py --site . --output .vercel/output/static",
     "Deploy the committed snapshot with ./scripts/deploy-production-clean.sh",
-    "Live-check /, /logos/mtef.png, all partner logos, hero image, /hirek, /sitemap.xml, /robots.txt"
+    "Live-check /, /logos/mtef.png, all partner logos, hero image, /hirek, /sutik, /sitemap.xml, /robots.txt and /_vercel/insights/script.js"
   ],
   "lastKnownIncident": {
     "date": "2026-05-16",

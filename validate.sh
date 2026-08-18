@@ -14,6 +14,7 @@ chk "hirek/index.html exists"       test -f "$SITE/hirek/index.html"
 chk "kozlemenyek page exists"       test -f "$SITE/kozlemenyek/megalakult-a-magyar-tuzvedelmi-egyezteto-forum/index.html"
 chk "adatvedelem.html exists"       test -f "$SITE/adatvedelem.html"
 chk "impresszum.html exists"        test -f "$SITE/impresszum.html"
+chk "sutik.html exists"             test -f "$SITE/sutik.html"
 chk "sitemap.xml exists"            test -f "$SITE/sitemap.xml"
 chk "robots.txt exists"             test -f "$SITE/robots.txt"
 
@@ -44,6 +45,25 @@ chk "Footer adatvedelem link is clean (no .html)" \
     bash -c '! grep -q "adatvedelem\.html" "$SITE/index.html"'
 chk "Footer impresszum link is clean (no .html)" \
     bash -c '! grep -q "impresszum\.html" "$SITE/index.html"'
+chk "Footer links to /sutik" \
+    grep -q 'href="/sutik"' "$SITE/index.html"
+
+echo ""
+echo "--- Cookieless analytics and legal notice ---"
+chk "Cookie notice canonical correct" \
+    grep -q 'canonical.*https://mtef.hu/sutik' "$SITE/sutik.html"
+chk "Cookie notice states cookieless analytics" \
+    grep -q 'nem használ sütit' "$SITE/sutik.html"
+chk "Privacy notice names Vercel Web Analytics" \
+    grep -q 'Vercel Web Analytics' "$SITE/adatvedelem.html"
+for html in \
+    "$SITE/index.html" \
+    "$SITE/hirek/index.html" \
+    "$SITE/adatvedelem.html" \
+    "$SITE/impresszum.html" \
+    "$SITE/sutik.html"; do
+    chk "analytics script: ${html#$SITE/}" grep -q '/_vercel/insights/script.js' "$html"
+done
 
 echo ""
 echo "--- Homepage schema ---"
@@ -101,6 +121,8 @@ chk "Sitemap: /adatvedelem" \
     grep -q 'https://mtef.hu/adatvedelem' "$SITE/sitemap.xml"
 chk "Sitemap: /impresszum" \
     grep -q 'https://mtef.hu/impresszum' "$SITE/sitemap.xml"
+chk "Sitemap: /sutik" \
+    grep -q 'https://mtef.hu/sutik' "$SITE/sitemap.xml"
 chk "Sitemap has lastmod" \
     grep -q 'lastmod' "$SITE/sitemap.xml"
 
@@ -118,6 +140,7 @@ while IFS=$'\t' read -r slug url title image_url; do
     chk "article exists: $slug" test -f "$ARTICLE"
     chk "article canonical: $slug" grep -q "https://mtef.hu${url}" "$ARTICLE"
     chk "article schema: $slug" grep -q '"NewsArticle"' "$ARTICLE"
+    chk "article analytics: $slug" grep -q '/_vercel/insights/script.js' "$ARTICLE"
     chk "article title: $slug" grep -Fq "$title" "$ARTICLE"
     chk "hirek entry: $slug" grep -q "$url" "$SITE/hirek/index.html"
     chk "sitemap entry: $slug" grep -q "https://mtef.hu${url}" "$SITE/sitemap.xml"

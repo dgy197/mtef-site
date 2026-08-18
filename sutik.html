@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sütik és webanalitika — MTEF</title>
+  <meta name="description" content="Tájékoztató az MTEF weboldal sütihasználatáról és sütimentes webanalitikájáról.">
+  <link rel="canonical" href="https://mtef.hu/sutik">
+  <link rel="icon" href="/favicon.ico?v=20260514b" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260514b">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260514b">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=20260514b">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260514b">
+  <link rel="manifest" href="/site.webmanifest?v=20260514b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fire: '#CD2A3E', forest: '#436F4D',
+            ink: '#1A1D21', warmgray: '#6B7280',
+            sand: '#F8F6F2', line: '#E5E7EB'
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
+          letterSpacing: { tightish: '-0.02em' }
+        }
+      }
+    }
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="bg-white text-ink font-sans antialiased">
+  <main class="max-w-3xl mx-auto px-6 py-16 sm:py-20">
+    <a href="/" class="text-fire underline underline-offset-4 decoration-fire/40 hover:decoration-fire transition-colors">← Vissza a főoldalra</a>
+    <div class="mt-8 h-[2px] w-24 bg-gradient-to-r from-fire via-line to-forest"></div>
+    <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-warmgray">Jogi információk</p>
+    <h1 class="font-bold tracking-tightish text-ink text-4xl sm:text-5xl leading-[1.05] mt-4 mb-8">Sütik és webanalitika</h1>
+
+    <div class="space-y-8 text-[17.5px] leading-[1.82] text-ink/80">
+      <section>
+        <h2 class="text-2xl font-semibold text-ink mb-3">1. Használ-e sütiket az oldal?</h2>
+        <p>Az MTEF weboldala jelenleg nem használ reklám-, profilalkotási vagy látogatottságmérési sütiket, és nem helyez el nem feltétlenül szükséges adatot a látogató eszközén.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-ink mb-3">2. Sütimentes látogatottságmérés</h2>
+        <p>A weboldal a Vercel Web Analytics szolgáltatással összesített forgalmi adatokat mér. A megoldás nem használ sütit, nem készít különböző webhelyeken átívelő profilt, és nem követi ugyanazt a látogatót több napon keresztül.</p>
+        <p>A rendszer a látogatások elkülönítéséhez naponta változó hash-t használ, amelyet a Vercel 24 órán belül elvet. Az MTEF összesített kimutatásokat lát, nem kap hozzáférést a látogatók IP-címéhez.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-ink mb-3">3. Milyen adatok jelenhetnek meg?</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>oldalmegtekintések és egyedi napi látogatások száma,</li>
+          <li>megtekintett oldal és időpont,</li>
+          <li>hivatkozó oldal,</li>
+          <li>eszköz-, operációsrendszer- és böngészőtípus,</li>
+          <li>IP-cím alapján közelítőleg meghatározott ország, régió és település.</li>
+        </ul>
+        <p>A mérés célja kizárólag annak megértése, hogy mely MTEF-tartalmak hasznosak, és hogyan javítható a weboldal.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-ink mb-3">4. Miért nincs sütisáv?</h2>
+        <p>Mivel a jelenlegi látogatottságmérés nem helyez el nem szükséges sütit vagy hasonló azonosítót a látogató eszközén, az oldal nem jelenít meg hozzájárulást kérő sütisávot. Ha a későbbiekben ilyen technológia kerülne az oldalra, az MTEF előzetesen frissíti ezt a tájékoztatót, és szükség esetén hozzájáruláskezelést vezet be.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-ink mb-3">5. További információ</h2>
+        <p>A személyes adatok kezeléséről az <a class="text-fire underline underline-offset-4 decoration-fire/40 hover:decoration-fire" href="/adatvedelem">Adatkezelési tájékoztató</a> ad részletes információt. Kérdés esetén: <a class="text-fire underline underline-offset-4 decoration-fire/40 hover:decoration-fire" href="mailto:info@mtef.hu">info@mtef.hu</a>.</p>
+        <p><strong>Hatályos:</strong> 2026. augusztus 18.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

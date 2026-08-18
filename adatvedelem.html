@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adatkezelési tájékoztató — MTEF</title>
-  <meta name="description" content="Adatkezelési tájékoztató a Magyar Tűzvédelmi Egyeztető Fórum weboldalához és kapcsolattartásához.">
+  <meta name="description" content="Adatkezelési tájékoztató a Magyar Tűzvédelmi Egyeztető Fórum weboldalához, kapcsolattartásához és sütimentes webanalitikájához.">
   <link rel="canonical" href="https://mtef.hu/adatvedelem">
   <link rel="icon" href="/favicon.ico?v=20260514b" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260514b">
@@ -35,6 +35,7 @@
       }
     }
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="bg-white text-ink font-sans antialiased">
   <main class="max-w-3xl mx-auto px-6 py-16 sm:py-20">
@@ -73,26 +74,26 @@
           <li>az üzenetküldés időpontja,</li>
           <li>a megkeresésben önkéntesen megadott egyéb adatok.</li>
         </ul>
-        <p>Webanalitikai mérés alkalmazása esetén a rendszer technikai jellegű adatokat is kezelhet, például IP-cím rövidített formája, böngésző- és eszközinformációk, megtekintett oldalak, oldalon töltött idő, valamint hivatkozó forrás.</p>
+        <p>A weboldal a Vercel Web Analytics sütimentes szolgáltatásával összesített látogatottsági statisztikát készít. Az MTEF nem kapja meg és nem látja a látogatók IP-címét. A kimutatások technikai adatokat tartalmazhatnak, így különösen a megtekintés időpontját, az oldal URL-jét, a hivatkozó oldalt, az eszköz-, operációsrendszer- és böngészőtípust, valamint IP-cím alapján közelítőleg meghatározott országot, régiót és települést.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-semibold text-ink mb-3">4. Az adatkezelés jogalapja</h2>
         <p>Az e-mailes kapcsolatfelvétel során kezelt személyes adatok kezelésének jogalapja az érintett önkéntes hozzájárulása, illetve a kapcsolatfelvételből eredő kommunikáció kezelése.</p>
-        <p>A weboldal működéséhez kapcsolódó technikai és analitikai adatkezelés jogalapja a szolgáltatás biztonságos és hatékony működtetéséhez fűződő jogos érdek, illetve szükség esetén az érintett hozzájárulása.</p>
+        <p>A sütimentes, összesített webanalitikai adatkezelés jogalapja az adatkezelőnek a weboldal működésének, elérésének és tartalmi hasznosságának méréséhez fűződő jogos érdeke. Az adatkezelő érdekmérlegelése szerint ez a korlátozott mérés nem követi a látogatót különböző webhelyeken vagy napokon át, és nem használ reklám- vagy profilalkotási célú azonosítót.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-semibold text-ink mb-3">5. Adatmegőrzési idő</h2>
         <p>A kapcsolatfelvétel során érkezett leveleket és az azokban szereplő személyes adatokat az adatkezelő a megkeresés lezárásától számított legfeljebb 12 hónapig őrzi meg, kivéve, ha jogszabály vagy folyamatban lévő ügy ennél hosszabb megőrzést indokol.</p>
-        <p>Az analitikai adatok megőrzési ideje az alkalmazott szolgáltatótól és beállításoktól függ, de az adatkezelő törekszik az észszerűen szükséges legrövidebb megőrzési idő alkalmazására.</p>
+        <p>A Vercel a látogatás elkülönítésére szolgáló, naponta változó azonosító hash-t 24 órán belül elveti. Az összesített statisztikák az MTEF Vercel-előfizetéséhez tartozó riportálási időszakban érhetők el.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-semibold text-ink mb-3">6. Adatfeldolgozók és tárhely</h2>
         <p>A weboldal üzemeltetéséhez az adatkezelő külső szolgáltatókat vehet igénybe, különösen tárhely- és infrastruktúraszolgáltatót.</p>
-        <p><strong>Tárhelyszolgáltatás:</strong> Vercel Inc.</p>
-        <p>A jövőben alkalmazott analitikai vagy egyéb technikai szolgáltatások esetén az adatkezelő ezt a tájékoztatót frissíti.</p>
+        <p><strong>Tárhelyszolgáltatás és webanalitika:</strong> Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, Amerikai Egyesült Államok).</p>
+        <p>A Vercel Web Analytics nem helyez el sütit a látogató eszközén. A szolgáltatás a beérkező technikai adatokból naponta változó hash-t képez, és az MTEF számára összesített statisztikákat jelenít meg. Részletesebb tájékoztatás a <a class="text-fire underline underline-offset-4 decoration-fire/40 hover:decoration-fire" href="/sutik">Sütik és webanalitika</a> oldalon olvasható.</p>
       </section>
 
       <section>
@@ -118,6 +119,7 @@
       <section>
         <h2 class="text-2xl font-semibold text-ink mb-3">9. Záró megjegyzés</h2>
         <p>Az adatkezelő fenntartja a jogot, hogy a weboldal szolgáltatásainak bővítésével összhangban a jelen tájékoztatót frissítse. Az aktuális változat mindig ezen az oldalon érhető el.</p>
+        <p><strong>Hatályos:</strong> 2026. augusztus 18.</p>
       </section>
     </div>
   </main>

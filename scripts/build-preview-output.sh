@@ -39,6 +39,7 @@ STATIC_PATHS=(
   kozlemenyek
   adatvedelem.html
   impresszum.html
+  sutik.html
   sitemap.xml
   robots.txt
   site.webmanifest

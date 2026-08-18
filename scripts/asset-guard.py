@@ -31,6 +31,10 @@ def norm_ref(ref: str) -> str | None:
     path = path.lstrip('/')
     if not path:
         return None
+    # Vercel platform-owned virtual routes are served at runtime and are not
+    # expected to exist in the static source/output tree.
+    if path.startswith('_vercel/'):
+        return None
     if path.endswith(ASSET_EXTS) or path.startswith(('logos/', 'assets/')):
         return path
     return None

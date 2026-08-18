@@ -64,6 +64,7 @@ Ellenőrizendő:
 - teljes szöveg
 - PDF/DOCX gombok
 - visszalink `/` és `/hirek` felé
+- a `/_vercel/insights/script.js` sütimentes analitikai script
 
 ## 3. Dokumentumok
 

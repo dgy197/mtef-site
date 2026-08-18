@@ -114,6 +114,7 @@ function statementPage(item) {
   .editorial { font-size: clamp(1.06rem, 1rem + 0.22vw, 1.15rem); line-height: 1.9; }
   .hu-stripe-soft { height: 2px; background: linear-gradient(to right, rgba(205,42,62,0.85) 0% 33.33%, rgba(229,231,235,0.9) 33.33% 66.66%, rgba(67,111,77,0.85) 66.66% 100%); }
 </style>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="antialiased">
 <header class="border-b border-line bg-white sticky top-0 z-50">
@@ -142,7 +143,7 @@ ${downloads ? `        ${downloads}\n` : ''}        <a href="mailto:info@mtef.hu
     </footer>
   </article>
 </main>
-<footer class="border-t border-line bg-white mt-4"><div class="max-w-4xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"><p class="text-[12.5px] text-warmgray">© 2026 Magyar Tűzvédelmi Egyeztető Fórum</p><nav class="flex gap-4 text-[12.5px] text-warmgray"><a href="/adatvedelem" class="hover:text-fire transition-colors">Adatvédelem</a><a href="/impresszum" class="hover:text-fire transition-colors">Impresszum</a></nav></div></footer>
+<footer class="border-t border-line bg-white mt-4"><div class="max-w-4xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"><p class="text-[12.5px] text-warmgray">© 2026 Magyar Tűzvédelmi Egyeztető Fórum</p><nav class="flex flex-wrap gap-4 text-[12.5px] text-warmgray"><a href="/adatvedelem" class="hover:text-fire transition-colors">Adatvédelem</a><a href="/sutik" class="hover:text-fire transition-colors">Sütik</a><a href="/impresszum" class="hover:text-fire transition-colors">Impresszum</a></nav></div></footer>
 </body>
 </html>
 `;
