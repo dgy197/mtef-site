@@ -5,6 +5,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/hirek", "destination": "/hirek/index.html" },
+    { "source": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok", "destination": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html" },
     { "source": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania", "destination": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html" },
     { "source": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia", "destination": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html" },
     { "source": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez", "destination": "/kozlemenyek/mabisz-csatlakozik-az-mtef-hez/index.html" },

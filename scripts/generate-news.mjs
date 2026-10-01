@@ -177,9 +177,9 @@ for (const item of sorted) {
 }
 
 const sitemapExtra = sorted.map((item) => {
-  const urls = [`  <url><loc>https://mtef.hu${item.url}</loc><lastmod>${item.date}</lastmod></url>`];
-  if (item.pdfUrl) urls.push(`  <url><loc>https://mtef.hu${item.pdfUrl}</loc><lastmod>${item.date}</lastmod></url>`);
-  if (item.docxUrl) urls.push(`  <url><loc>https://mtef.hu${item.docxUrl}</loc><lastmod>${item.date}</lastmod></url>`);
+  const urls = [`  <url><loc>https://mtef.hu${item.url}</loc><lastmod>${item.modifiedDate || item.date}</lastmod></url>`];
+  if (item.pdfUrl) urls.push(`  <url><loc>https://mtef.hu${item.pdfUrl}</loc><lastmod>${item.modifiedDate || item.date}</lastmod></url>`);
+  if (item.docxUrl) urls.push(`  <url><loc>https://mtef.hu${item.docxUrl}</loc><lastmod>${item.modifiedDate || item.date}</lastmod></url>`);
   return urls.join('\n');
 }).join('\n');
 let sitemap = readFileSync('sitemap.xml', 'utf8');

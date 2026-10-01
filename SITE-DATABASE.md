@@ -21,6 +21,7 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 - `/` → `index.html`
 - `/hirek` → `hirek/index.html`
+- `/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok` → XV. Lakiteleki Tűzvédelmi Szakmai Napok, 14 konferenciafotóval
 - `/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania` → erdő- és vegetációtűz-kockázati szakmai közlemény
 - `/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia` → konferenciahír
 - `/kozlemenyek/mabisz-csatlakozik-az-mtef-hez` → MABISZ-csatlakozási hír
@@ -68,6 +69,21 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 - `site.webmanifest`
 
 ### Dokumentumok
+
+- `assets/uploads/lakitelek-2026-by0a7503.jpg`
+- `assets/uploads/lakitelek-2026-by0a7512.jpg`
+- `assets/uploads/lakitelek-2026-by0a7521.jpg`
+- `assets/uploads/lakitelek-2026-by0a7526.jpg`
+- `assets/uploads/lakitelek-2026-by0a7530.jpg`
+- `assets/uploads/lakitelek-2026-by0a7532.jpg`
+- `assets/uploads/lakitelek-2026-by0a7533.jpg`
+- `assets/uploads/lakitelek-2026-by0a7534.jpg`
+- `assets/uploads/lakitelek-2026-by0a7541.jpg`
+- `assets/uploads/lakitelek-2026-by0a7542.jpg`
+- `assets/uploads/lakitelek-2026-by0a7546.jpg`
+- `assets/uploads/lakitelek-2026-by0a7548.jpg`
+- `assets/uploads/lakitelek-2026-by0a7558.jpg`
+- `assets/uploads/lakitelek-2026-by0a7566.jpg`
 
 - `assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg`
 - `assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg`

@@ -27,6 +27,118 @@
   ],
   "documents": [
     {
+      "slug": "lakitelek-2026-by0a7503",
+      "status": "published",
+      "title": "Előadó a konferencia pulpitusánál, a háttérben a rendezvény nyitódiája.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7503.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7503.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7512",
+      "status": "published",
+      "title": "Előadó a XV. Lakiteleki Tűzvédelmi Szakmai Napok nyitódiája előtt.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7512.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7512.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7521",
+      "status": "published",
+      "title": "Két előadó tűzvédelmi tervezési témájú prezentáció közben.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7521.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7521.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7526",
+      "status": "published",
+      "title": "Közös szakmai előadás a konferencia pulpitusánál.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7526.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7526.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7530",
+      "status": "published",
+      "title": "A konferencia résztvevői az előadóteremben.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7530.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7530.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7532",
+      "status": "published",
+      "title": "A konferenciaterem karzata és résztvevői.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7532.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7532.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7533",
+      "status": "published",
+      "title": "Szakmai előadás és a közönség a Lakiteleki Népfőiskola termében.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7533.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7533.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7534",
+      "status": "published",
+      "title": "A XV. Lakiteleki Tűzvédelmi Szakmai Napok előadóterme és közönsége.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7534.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7534.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7541",
+      "status": "published",
+      "title": "Előadás és közönség a konferenciateremben, a szakmai szervezetek molinóival.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7541.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7541.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7542",
+      "status": "published",
+      "title": "Előadó a konferencia pulpitusánál, visszaszámlálást bemutató vetítéssel.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7542.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7542.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7546",
+      "status": "published",
+      "title": "Előadás a mesterséges intelligenciához kapcsolódó vetítéssel.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7546.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7546.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7548",
+      "status": "published",
+      "title": "Felhőalapú tűzvédelmi platformot bemutató szakmai előadás.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7548.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7548.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7558",
+      "status": "published",
+      "title": "Portré a Tűzvédelmi Nívódíj üvegplakettjével a kamarai molinók előtt.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7558.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7558.jpg"
+    },
+    {
+      "slug": "lakitelek-2026-by0a7566",
+      "status": "published",
+      "title": "A tűzvédelem jövőjét bemutató szakmai előadás.",
+      "kind": "image",
+      "source_path": "assets/uploads/lakitelek-2026-by0a7566.jpg",
+      "public_url": "/assets/uploads/lakitelek-2026-by0a7566.jpg"
+    },
+    {
       "slug": "sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10",
       "status": "published",
       "title": "Sajókápolnai vegetációtűz aktív tűzfrontja – drónfelvétel",
@@ -116,6 +228,39 @@
     }
   ],
   "news": [
+    {
+      "slug": "jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
+      "status": "published",
+      "date": "2026-09-20",
+      "date_modified": "2026-10-01",
+      "display_date": "2026. szeptember 20.",
+      "category": "Konferencia",
+      "title": "Jövőbe mutató megoldások a tűzvédelemben – az MTEF társszervezésével zajlott a XV. Lakiteleki Tűzvédelmi Szakmai Napok",
+      "excerpt": "Az MTEF társszervezésével megtartott kétnapos konferencia a jövőbe mutató tűzvédelmi megoldásokat és a szakmai együttműködést állította középpontba.",
+      "url": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
+      "image_url": "/assets/uploads/lakitelek-2026-by0a7541.jpg",
+      "image_alt": "Előadás és közönség a konferenciateremben, a szakmai szervezetek molinóival.",
+      "og_image_url": "/assets/uploads/lakitelek-2026-by0a7541.jpg",
+      "source_static_path": "kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html",
+      "documents": [
+        "lakitelek-2026-by0a7503",
+        "lakitelek-2026-by0a7512",
+        "lakitelek-2026-by0a7521",
+        "lakitelek-2026-by0a7526",
+        "lakitelek-2026-by0a7530",
+        "lakitelek-2026-by0a7532",
+        "lakitelek-2026-by0a7533",
+        "lakitelek-2026-by0a7534",
+        "lakitelek-2026-by0a7541",
+        "lakitelek-2026-by0a7542",
+        "lakitelek-2026-by0a7546",
+        "lakitelek-2026-by0a7548",
+        "lakitelek-2026-by0a7558",
+        "lakitelek-2026-by0a7566"
+      ],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
     {
       "slug": "a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania",
       "status": "published",

@@ -25,6 +25,12 @@
       "canonical": "https://mtef.hu/hirek"
     },
     {
+      "path": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
+      "source": "kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html",
+      "output": "kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html",
+      "canonical": "https://mtef.hu/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok"
+    },
+    {
       "path": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania",
       "source": "kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html",
       "output": "kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html"
@@ -115,6 +121,20 @@
       "site.webmanifest"
     ],
     "documents": [
+      "assets/uploads/lakitelek-2026-by0a7503.jpg",
+      "assets/uploads/lakitelek-2026-by0a7512.jpg",
+      "assets/uploads/lakitelek-2026-by0a7521.jpg",
+      "assets/uploads/lakitelek-2026-by0a7526.jpg",
+      "assets/uploads/lakitelek-2026-by0a7530.jpg",
+      "assets/uploads/lakitelek-2026-by0a7532.jpg",
+      "assets/uploads/lakitelek-2026-by0a7533.jpg",
+      "assets/uploads/lakitelek-2026-by0a7534.jpg",
+      "assets/uploads/lakitelek-2026-by0a7541.jpg",
+      "assets/uploads/lakitelek-2026-by0a7542.jpg",
+      "assets/uploads/lakitelek-2026-by0a7546.jpg",
+      "assets/uploads/lakitelek-2026-by0a7548.jpg",
+      "assets/uploads/lakitelek-2026-by0a7558.jpg",
+      "assets/uploads/lakitelek-2026-by0a7566.jpg",
       "assets/uploads/sajokapolna-vegetaciotuz-dronfelvetel-2026-08-10.jpg",
       "assets/uploads/szekesfehervar-kapos-utca-vegetaciotuz-lakoovezet-2026-08-05.jpg",
       "assets/uploads/bugaci-erdotuz-fustfaklya-modis-muholdkep-2012-04-29.jpg",

@@ -27,6 +27,7 @@ function mapNews(item) {
   return compact({
     id: item.slug,
     date: item.date || (item.published_at || item.date_created || '').slice(0, 10),
+    modifiedDate: item.date_modified || item.modifiedDate,
     displayDate: item.display_date || item.displayDate || item.published_at || item.date_created || '',
     category: item.category || 'Közlemény',
     title: item.title,
