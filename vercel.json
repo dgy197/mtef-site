@@ -9,6 +9,8 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/hirek", "destination": "/hirek/index.html" },
+    { "source": "/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato", "destination": "/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato/index.html" },
+    { "source": "/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia", "destination": "/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia/index.html" },
     { "source": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok", "destination": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html" },
     { "source": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania", "destination": "/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania/index.html" },
     { "source": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia", "destination": "/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia/index.html" },

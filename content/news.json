@@ -1,5 +1,32 @@
 [
   {
+    "id": "a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato",
+    "date": "2026-11-12",
+    "modifiedDate": "2026-11-13",
+    "displayDate": "2026. november 12.",
+    "category": "Szakmai közlemény",
+    "title": "A magyar tűzvédelem korszerűsítése – a bizottsági tájékoztató legfontosabb szakmai üzenetei",
+    "excerpt": "A tájékoztató a magyar tűzvédelem korszerűsítésének rendszerszintű összefüggéseire, a változó kockázatokra és a lehetséges fejlesztési irányokra irányította a figyelmet.",
+    "url": "/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato",
+    "imageUrl": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+    "imageAlt": "Prezentációs dia: légzőkészüléket viselő tűzoltó oltja egy beomlott tetőszerkezetű épület tüzét. Felirat: „Ez várja a helyszínen a tűzoltót. Hogyan tudunk segíteni?”",
+    "ogImageUrl": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+    "priority": 0.9,
+    "schemaType": "NewsArticle"
+  },
+  {
+    "id": "mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia",
+    "date": "2026-11-12",
+    "modifiedDate": "2026-11-13",
+    "displayDate": "2026. november 12.",
+    "category": "Szakmai közlemény",
+    "title": "Az MTEF törvénymódosítást kezdeményezett a nemzeti tűzvédelmi stratégia megalkotása érdekében",
+    "excerpt": "A kezdeményezés célja az országos tűzvédelmi problématérkép és az arra épülő nemzeti tűzvédelmi stratégia elkészítésének törvényi megalapozása.",
+    "url": "/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia",
+    "priority": 0.9,
+    "schemaType": "NewsArticle"
+  },
+  {
     "id": "jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
     "date": "2026-09-20",
     "modifiedDate": "2026-10-01",
