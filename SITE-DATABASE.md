@@ -21,6 +21,8 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 
 - `/` → `index.html`
 - `/hirek` → `hirek/index.html`
+- `/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato` → bizottsági tájékoztató szakmai üzenetei, 5 prezentációs diával
+- `/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia` → törvénymódosítási kezdeményezés a nemzeti tűzvédelmi stratégiáért
 - `/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok` → XV. Lakiteleki Tűzvédelmi Szakmai Napok, 14 konferenciafotóval
 - `/kozlemenyek/a-tuzkockazat-no-a-felkeszulesnek-is-lepest-kell-tartania` → erdő- és vegetációtűz-kockázati szakmai közlemény
 - `/kozlemenyek/tuzesetekbol-tanulni-x-tuzesetek-vizsgalata-konferencia` → konferenciahír
@@ -69,6 +71,12 @@ Ez a fájl a `site-database.json` emberi olvasatú párja. Cél: ne csak a fejü
 - `site.webmanifest`
 
 ### Dokumentumok
+
+- `assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp`
+- `assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller.webp`
+- `assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa.webp`
+- `assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg.webp`
+- `assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek.webp`
 
 - `assets/uploads/lakitelek-2026-by0a7503.jpg`
 - `assets/uploads/lakitelek-2026-by0a7512.jpg`

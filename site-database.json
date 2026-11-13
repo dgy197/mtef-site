@@ -25,6 +25,18 @@
       "canonical": "https://mtef.hu/hirek"
     },
     {
+      "path": "/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato",
+      "source": "kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato/index.html",
+      "output": "kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato/index.html",
+      "canonical": "https://mtef.hu/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato"
+    },
+    {
+      "path": "/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia",
+      "source": "kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia/index.html",
+      "output": "kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia/index.html",
+      "canonical": "https://mtef.hu/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia"
+    },
+    {
       "path": "/kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
       "source": "kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html",
       "output": "kozlemenyek/jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok/index.html",
@@ -121,6 +133,11 @@
       "site.webmanifest"
     ],
     "documents": [
+      "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+      "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller.webp",
+      "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa.webp",
+      "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg.webp",
+      "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek.webp",
       "assets/uploads/lakitelek-2026-by0a7503.jpg",
       "assets/uploads/lakitelek-2026-by0a7512.jpg",
       "assets/uploads/lakitelek-2026-by0a7521.jpg",

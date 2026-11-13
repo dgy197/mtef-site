@@ -27,6 +27,46 @@
   ],
   "documents": [
     {
+      "slug": "mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas",
+      "status": "published",
+      "title": "Prezentációs dia: légzőkészüléket viselő tűzoltó oltja egy beomlott tetőszerkezetű épület tüzét. Felirat: „Ez várja a helyszínen a tűzoltót. Hogyan tudunk segíteni?”",
+      "kind": "image",
+      "source_path": "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+      "public_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp"
+    },
+    {
+      "slug": "mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller",
+      "status": "published",
+      "title": "Prezentációs dia: háromlábú fazsámoly, lábain a Tűzmegelőzés, Tűzoltás és Tűzvizsgálat feliratokkal. Felirat: „A tűzvédelem akkor stabil, ha mindhárom lába erős.”",
+      "kind": "image",
+      "source_path": "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller.webp",
+      "public_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller.webp"
+    },
+    {
+      "slug": "mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa",
+      "status": "published",
+      "title": "Prezentációs dia: Biztonság – Biztonságtudatosság – Tűzvédelem – Reziliencia. Kosár alakú irodaépület fotója, az épülettel szembeni elvárások listája, és a tűzvédelmi biztonsági szint fenntartása a tervezési, kivitelezési és üzemeltetési életszakaszokban.",
+      "kind": "image",
+      "source_path": "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa.webp",
+      "public_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa.webp"
+    },
+    {
+      "slug": "mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg",
+      "status": "published",
+      "title": "Prezentációs dia: A tűz percek alatt kritikussá válhat. Bal oldalon helyiségtűz kísérleti felvétele (3–5 perc alatt flashover), jobb oldalon Magyarország tűzoltósági elérhetőségi modellje: 15 perc 64,07%, 25 perc 93,11% népességi lefedettség.",
+      "kind": "image",
+      "source_path": "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg.webp",
+      "public_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg.webp"
+    },
+    {
+      "slug": "mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek",
+      "status": "published",
+      "title": "Prezentációs dia: Erdő- és vegetációs tűzesetek. A 2012-es bugaci erdőtűz műholdképe, a jelentősebb hazai vegetációtüzek táblázata 1993 és 2022 között, és a 2022-től erősödő országos kitettség.",
+      "kind": "image",
+      "source_path": "assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek.webp",
+      "public_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek.webp"
+    },
+    {
       "slug": "lakitelek-2026-by0a7503",
       "status": "published",
       "title": "Előadó a konferencia pulpitusánál, a háttérben a rendezvény nyitódiája.",
@@ -228,6 +268,45 @@
     }
   ],
   "news": [
+    {
+      "slug": "a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato",
+      "status": "published",
+      "date": "2026-11-12",
+      "date_modified": "2026-11-13",
+      "display_date": "2026. november 12.",
+      "category": "Szakmai közlemény",
+      "title": "A magyar tűzvédelem korszerűsítése – a bizottsági tájékoztató legfontosabb szakmai üzenetei",
+      "excerpt": "A tájékoztató a magyar tűzvédelem korszerűsítésének rendszerszintű összefüggéseire, a változó kockázatokra és a lehetséges fejlesztési irányokra irányította a figyelmet.",
+      "url": "/kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato",
+      "image_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+      "image_alt": "Prezentációs dia: légzőkészüléket viselő tűzoltó oltja egy beomlott tetőszerkezetű épület tüzét. Felirat: „Ez várja a helyszínen a tűzoltót. Hogyan tudunk segíteni?”",
+      "og_image_url": "/assets/uploads/mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas.webp",
+      "source_static_path": "kozlemenyek/a-magyar-tuzvedelem-korszerusitese-bizottsagi-tajekoztato/index.html",
+      "documents": [
+        "mtef-bizottsagi-tajekoztato-2026-11-12-tuzolto-beavatkozas",
+        "mtef-bizottsagi-tajekoztato-2026-11-12-harom-piller",
+        "mtef-bizottsagi-tajekoztato-2026-11-12-biztonsagi-szint-fenntartasa",
+        "mtef-bizottsagi-tajekoztato-2026-11-12-tuzfejlodes-es-elerhetoseg",
+        "mtef-bizottsagi-tajekoztato-2026-11-12-erdo-vegetacios-tuzesetek"
+      ],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
+    {
+      "slug": "mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia",
+      "status": "published",
+      "date": "2026-11-12",
+      "date_modified": "2026-11-13",
+      "display_date": "2026. november 12.",
+      "category": "Szakmai közlemény",
+      "title": "Az MTEF törvénymódosítást kezdeményezett a nemzeti tűzvédelmi stratégia megalkotása érdekében",
+      "excerpt": "A kezdeményezés célja az országos tűzvédelmi problématérkép és az arra épülő nemzeti tűzvédelmi stratégia elkészítésének törvényi megalapozása.",
+      "url": "/kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia",
+      "source_static_path": "kozlemenyek/mtef-torvenymodositast-kezdemenyezett-nemzeti-tuzvedelmi-strategia/index.html",
+      "documents": [],
+      "priority": 0.9,
+      "schema_type": "NewsArticle"
+    },
     {
       "slug": "jovobe-mutato-megoldasok-xv-lakiteleki-tuzvedelmi-szakmai-napok",
       "status": "published",
