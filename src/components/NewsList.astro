@@ -1,0 +1,23 @@
+---
+/** /hirek list: every published item, newest first (former generate-news.mjs listCard). */
+import { getNews, urlOf, labelOf, huDate, fileHref } from '../lib/news';
+const items = await getNews();
+---
+{items.map((e) => (
+  <article class="border border-line rounded-2xl p-7 sm:p-8 hover:border-ink/20 hover:shadow-[0_8px_30px_rgba(26,29,33,0.06)] transition-all mb-6">
+    <p class="eyebrow text-[11px] text-fire mb-3 font-semibold">{labelOf(e)} · {huDate(e.data.date)}</p>
+    <h2 class="font-bold tracking-tightish text-ink text-2xl sm:text-3xl leading-[1.1] mb-3">
+      <a href={urlOf(e)} class="hover:text-fire transition-colors">{e.data.title}</a>
+    </h2>
+    <p class="text-[16px] text-ink/70 leading-[1.72] mb-5 max-w-2xl">{e.data.summary}</p>
+    <div class="flex flex-wrap items-center gap-4">
+      <a href={urlOf(e)} class="inline-flex items-center gap-2 text-fire text-[14.5px] font-medium hover:underline underline-offset-4 decoration-fire/40">
+        Közlemény teljes szövege
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      {e.data.attachments.map((a) => (
+        <a href={fileHref(e, a.file)} download class="text-[14.5px] font-medium text-ink/70 hover:text-fire hover:underline underline-offset-4 decoration-fire/40">{a.title}</a>
+      ))}
+    </div>
+  </article>
+))}

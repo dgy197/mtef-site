@@ -1,0 +1,63 @@
+[
+  {
+    "@type": "Organization",
+    "@id": "https://mtef.hu/#organization",
+    "name": "Magyar Tűzvédelmi Egyeztető Fórum",
+    "alternateName": "MTEF",
+    "url": "https://mtef.hu/",
+    "email": "info@mtef.hu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mtef.hu/assets/brand/magyar-tuzvedelmi-egyezteto-forum-mtef-logo.png"
+    },
+    "foundingDate": "2026-04-29",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@mtef.hu",
+      "availableLanguage": "Hungarian"
+    },
+    "member": [
+      {
+        "@type": "Organization",
+        "name": "Magyar Tűzoltó Szövetség",
+        "url": "https://tuzoltoszovetseg.hu/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Magyar Mérnöki Kamara Tűzvédelmi Tagozat",
+        "url": "https://www.mmk.hu/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Magyar Építész Kamara Tűzvédelmi Tagozat",
+        "url": "https://mek.hu/"
+      },
+      {
+        "@type": "Organization",
+        "name": "TSZVSZ Magyar Tűzvédelmi Szövetség",
+        "url": "https://www.tszvsz.hu/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Építési Vállalkozók Országos Szakszövetsége Tűzvédelmi Tagozat",
+        "url": "https://evosz.hu/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Tűzvédelmi Mérnökök Közhasznú Egyesülete",
+        "url": "https://www.tmke.hu/"
+      }
+    ]
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://mtef.hu/#website",
+    "url": "https://mtef.hu/",
+    "name": "Magyar Tűzvédelmi Egyeztető Fórum",
+    "publisher": {
+      "@id": "https://mtef.hu/#organization"
+    },
+    "inLanguage": "hu-HU"
+  }
+]
