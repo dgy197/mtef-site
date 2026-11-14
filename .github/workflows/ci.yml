@@ -1,0 +1,41 @@
+name: Ellenőrzés
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ellenorzes-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # This name is the required status check of the protected main branch.
+    name: Ellenőrzés és build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          # the route guard diffs the PR against its base branch
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Tartalom- és útvonal-őr
+        run: npm run check:content
+      - name: Típusellenőrzés (astro check)
+        run: npm run check
+      - name: Build és asset guard
+        run: npm run build
+      - name: Régi URL-ek megléte
+        run: npm run check:urls
+      - name: Futásidejű függőségek biztonsági ellenőrzése
+        run: npm audit --omit=dev

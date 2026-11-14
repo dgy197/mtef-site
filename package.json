@@ -2,21 +2,32 @@
   "name": "mtef-site",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "mtef:mcp": "node mcp/mtef-cms-server.mjs",
-    "mtef:mcp:http": "node server/http-mcp-server.mjs",
-    "mtef:mcp:smoke": "node scripts/mtef-mcp-smoke.mjs",
-    "mtef:supabase:smoke": "node scripts/mtef-supabase-smoke.mjs",
-    "mtef:supabase:create-project": "node scripts/mtef-supabase-create-project.mjs",
-    "mtef:supabase:apply-migration": "node scripts/mtef-supabase-apply-migration.mjs",
-    "mtef:supabase:get-keys": "node scripts/mtef-supabase-get-keys.mjs",
-    "mtef:supabase:import-seed": "node scripts/mtef-supabase-import-seed.mjs",
-    "mtef:supabase:export": "node scripts/mtef-supabase-export.mjs --write",
-    "mtef:build-preview": "./scripts/build-preview-output.sh"
+    "dev": "astro dev",
+    "build": "astro build && python3 scripts/asset-guard.py --output dist",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:urls": "python3 scripts/url-check.py dist scripts/legacy-urls.txt",
+    "check:content": "node scripts/content-guard.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.29.0",
-    "express": "^5.2.1",
-    "zod": "^4.4.3"
+    "@astrojs/markdown-satteri": "0.4.7",
+    "@astrojs/rss": "4.0.19",
+    "@fontsource/dm-sans": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/newsreader": "5.3.0",
+    "astro": "7.4.7",
+    "sharp": "0.35.5",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "autoprefixer": "10.6.2",
+    "postcss": "8.5.32",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3"
   }
 }

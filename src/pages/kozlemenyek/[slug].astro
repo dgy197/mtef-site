@@ -1,0 +1,136 @@
+---
+/**
+ * Article page of one news item / statement. Markup and CSS follow the
+ * 2026-11-12 hand-written article pages (the newest legacy template).
+ */
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import '../../styles/global.css';
+import { sizeOf } from '../../lib/public-img.mjs';
+import { getNews, urlOf, labelOf, huDate, isoDay, picSrc, abs, fileHref, SITE, type Item } from '../../lib/news';
+
+export async function getStaticPaths() {
+  const news = await getNews();
+  return news.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props as { entry: Item };
+const d = entry.data;
+const { Content } = await render(entry);
+const url = SITE + urlOf(entry);
+const title = `${d.title} — MTEF`;
+const coverSrc = picSrc(d.cover);
+const ogImage = abs(coverSrc) ?? `${SITE}/assets/og-image.png`;
+const ogAlt = d.cover ? d.coverAlt : 'Magyar Tűzvédelmi Egyeztető Fórum — hivatalos megjelenés';
+// The cover is shown on top unless the body already starts with / contains it.
+const showCover = !!d.cover && !(entry.body ?? '').includes(typeof d.cover === 'string' ? d.cover : '\u0000');
+// Legacy public/ pictures get their intrinsic size so the browser reserves the box.
+const coverSize = typeof d.cover === 'string' ? await sizeOf(d.cover) : {};
+const gallerySizes = await Promise.all(d.gallery.map((g) => (typeof g.src === 'string' ? sizeOf(g.src) : {})));
+const byline = d.byline ?? (d.author === 'MTEF' ? 'Kiadta: a Magyar Tűzvédelmi Egyeztető Fórum' : d.author);
+const images = [coverSrc, ...d.gallery.map((g) => picSrc(g.src))].filter(Boolean).map((s) => abs(s));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: d.title,
+  description: d.summary,
+  datePublished: isoDay(d.date),
+  dateModified: isoDay(d.updated ?? d.date),
+  inLanguage: 'hu-HU',
+  mainEntityOfPage: url,
+  url,
+  ...(images.length ? { image: images } : {}),
+  articleSection: labelOf(entry),
+  ...(d.attachments.length
+    ? { associatedMedia: d.attachments.map((a) => ({ '@type': 'MediaObject', contentUrl: SITE + fileHref(entry, a.file),
+        encodingFormat: a.file.endsWith('.pdf') ? 'application/pdf'
+          : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })) }
+    : {}),
+  publisher: {
+    '@type': 'Organization',
+    name: 'Magyar Tűzvédelmi Egyeztető Fórum',
+    alternateName: 'MTEF',
+    url: `${SITE}/`,
+    logo: { '@type': 'ImageObject', url: `${SITE}/assets/brand/magyar-tuzvedelmi-egyezteto-forum-mtef-logo.png` },
+  },
+};
+---
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={d.summary} />
+<link rel="canonical" href={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={d.summary} />
+<meta property="og:type" content="article" />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content="MTEF" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={ogAlt} />
+<meta property="article:published_time" content={isoDay(d.date)} />
+{d.updated && <meta property="article:modified_time" content={isoDay(d.updated)} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={d.summary} />
+<meta name="twitter:image" content={ogImage} />
+<link rel="icon" href="/favicon.ico?v=20260514b" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260514b" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260514b" />
+<link rel="manifest" href="/site.webmanifest?v=20260514b" />
+<link rel="alternate" type="application/rss+xml" title="MTEF hírek" href="/hirek/rss.xml" />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd, null, 2)} />
+<style is:global>
+body{font-family:'DM Sans',system-ui,sans-serif;color:#1A1D21;background:#F8F6F2}.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase}.hu-stripe-soft{height:2px;background:linear-gradient(to right,rgba(205,42,62,.85) 0 33.33%,rgba(229,231,235,.9) 33.33% 66.66%,rgba(67,111,77,.85) 66.66% 100%)}
+.article-body{font-size:clamp(1.02rem,.98rem + .2vw,1.12rem);line-height:1.82;color:rgba(26,29,33,.88)}.article-body>p{margin-top:1.35rem}.article-body h2,.photo-gallery h2{font-size:clamp(1.55rem,1.3rem + 1vw,2.1rem);line-height:1.15;font-weight:700;letter-spacing:-.02em;color:#1A1D21;margin:3.8rem 0 1.2rem}.article-body h3{font-size:1.18rem;line-height:1.35;font-weight:700;color:#1A1D21;margin:2.2rem 0 .7rem}.article-body a{color:#CD2A3E;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}.article-body sup{font-size:.7em;vertical-align:super;color:#CD2A3E;font-weight:600}.article-body ul,.article-body ol{list-style:disc;padding-left:1.5rem;margin:1rem 0 1.7rem}.article-body ol{list-style:decimal}.article-body li{margin:.65rem 0;padding-left:.25rem}
+.article-body>p:first-child:has(>strong:only-child){background:#fff;border:1px solid #E5E7EB;border-left:4px solid #CD2A3E;border-radius:0 1rem 1rem 0;padding:1.25rem 1.35rem;font-weight:600}
+.article-body blockquote{margin:2.4rem 0;padding:1.2rem 1.4rem;border-left:3px solid #436F4D;background:rgba(67,111,77,.07);font-family:'Newsreader',Georgia,serif;font-size:1.25rem;line-height:1.55;font-style:italic}.article-body blockquote>p+p{margin-top:.8rem}
+.article-body p:has(>img:only-child){margin:2.7rem 0 0}.article-body p:has(>img:only-child) img{width:100%;max-height:620px;object-fit:cover;border-radius:1rem;border:1px solid #E5E7EB;background:#fff}.article-body p:has(>img:only-child)+p:has(>em:only-child){margin-top:.7rem;color:#6B7280;font-size:.82rem;line-height:1.5;font-style:normal}.article-body p:has(>img:only-child)+p:has(>em:only-child) em{font-style:normal}
+.article-photo{display:block;width:100%;height:auto;border-radius:1rem;border:1px solid #E5E7EB;background:#fff}.photo-gallery{margin-top:3.5rem;padding-top:1rem;border-top:1px solid #E5E7EB}.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.photo-grid a{display:block;border-radius:1rem}.photo-grid a:focus-visible{outline:3px solid #CD2A3E;outline-offset:4px}.photo-grid a:last-child:nth-child(odd){grid-column:1/-1}
+/* "## Források" closes an item: everything after it is the smaller sources block of the legacy pages */
+.article-body h2#források{margin-top:3.5rem;padding-top:2rem;border-top:1px solid #E5E7EB}.article-body h2#források~*{font-size:.87rem;line-height:1.62;color:#4B5563}.article-body h2#források+p{font-style:italic}.article-body h2#források+p~p{margin-top:1.15rem}.article-body h2#források~ul{font-size:.82rem}
+.article-body .footnotes{margin-top:3.5rem;padding-top:2rem;border-top:1px solid #E5E7EB;font-size:.87rem;line-height:1.62;color:#4B5563}
+@media(max-width:640px){.article-body h2{margin-top:3rem}.photo-grid{grid-template-columns:1fr}}
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="antialiased">
+<header class="border-b border-line bg-white sticky top-0 z-50"><div class="max-w-4xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between"><a href="/" class="flex items-center gap-2.5" aria-label="MTEF főoldal"><img src="/logos/mtef.png" alt="MTEF" class="w-8 h-8 object-contain" loading="eager" /><span class="font-bold tracking-tightish text-ink text-[15px] hidden sm:block">MTEF</span></a><nav class="flex items-center gap-5 text-[13px] text-ink/70"><a href="/hirek" class="hover:text-fire transition-colors">← Hírek</a><a href="/" class="hover:text-fire transition-colors">Főoldal</a></nav></div></header>
+<main><article class="max-w-[780px] mx-auto px-5 sm:px-8 py-14 sm:py-20">
+<header class="mb-10 sm:mb-12"><p class="eyebrow text-[10px] sm:text-[11px] text-fire mb-4 font-semibold">{labelOf(entry)}</p>{d.kicker && <p class="eyebrow text-[10px] text-warmgray mb-5 leading-relaxed">{d.kicker}</p>}<h1 class="font-bold tracking-tightish text-ink text-3xl sm:text-4xl md:text-5xl leading-[1.05]">{d.title}</h1>{d.subtitle && <p class="mt-6 font-serif text-xl sm:text-2xl leading-relaxed text-ink/70">{d.subtitle}</p>}<div class="eyebrow mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-warmgray font-medium"><time datetime={isoDay(d.date)}>{d.dateline ?? huDate(d.date)}</time>{byline && <><span class="hidden sm:inline text-line">|</span><span>{byline}</span></>}</div><div class="hu-stripe-soft w-32 mt-7"></div></header>
+{showCover && (
+  <figure class="mb-10">
+    {typeof d.cover === 'string'
+      ? <img class="article-photo" src={d.cover} alt={d.coverAlt} {...coverSize} loading="eager" fetchpriority="high" decoding="async" />
+      : <Image class="article-photo" src={d.cover!} alt={d.coverAlt!} loading="eager" fetchpriority="high" widths={[780, 1560]} sizes="(max-width: 820px) 100vw, 780px" />}
+  </figure>
+)}
+<div class="article-body"><Content /></div>
+{d.video && (
+  <div class="my-8 rounded-2xl border border-line bg-white p-5"><p class="eyebrow text-[10px] text-fire mb-3 font-semibold">Videó</p><a href={d.video} target="_blank" rel="noopener noreferrer" class="block text-fire font-medium hover:underline underline-offset-4">Videó megtekintése (új lapon)</a></div>
+)}
+{d.gallery.length > 0 && (
+  <section class="photo-gallery" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">{d.galleryTitle ?? 'Képek'}</h2>
+    <div class="photo-grid">
+      {d.gallery.map((g, i) => (
+        <a href={picSrc(g.src)} aria-label={`${g.alt} Nagyobb kép megnyitása.`}>
+          {typeof g.src === 'string'
+            ? <img class="article-photo" src={g.src} alt={g.alt} {...gallerySizes[i]} loading="lazy" decoding="async" />
+            : <Image class="article-photo" src={g.src} alt={g.alt} widths={[390, 780]} sizes="(max-width: 640px) 100vw, 390px" />}
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+{d.links.length > 0 && (
+  <div class="my-8 rounded-2xl border border-line bg-white p-5"><p class="eyebrow text-[10px] text-fire mb-3 font-semibold">Kapcsolódó tartalom</p>{d.links.map((l) => <a href={l.url} target="_blank" rel="noopener noreferrer" class="block text-fire font-medium hover:underline underline-offset-4">{l.title}</a>)}</div>
+)}
+<footer class="mt-12 pt-8 border-t border-line"><div class="flex flex-wrap items-center gap-4">{d.attachments.map((a) => <a href={fileHref(entry, a.file)} download class="inline-flex items-center gap-2 text-[14.5px] font-semibold text-white bg-fire hover:bg-ink rounded-full px-5 py-2.5 transition-colors">{a.title}</a>)}<a href="mailto:info@mtef.hu" class="text-[14.5px] font-medium text-fire hover:underline underline-offset-4">info@mtef.hu</a><a href="/" class="text-[14.5px] font-medium text-ink/60 hover:text-fire">← Vissza a főoldalra</a><a href="/hirek" class="text-[14.5px] font-medium text-ink/60 hover:text-fire">Összes közlemény</a></div></footer>
+</article></main>
+<footer class="border-t border-line bg-white mt-4"><div class="max-w-4xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"><p class="text-[12.5px] text-warmgray">© 2026 Magyar Tűzvédelmi Egyeztető Fórum</p><nav class="flex gap-4 text-[12.5px] text-warmgray"><a href="/adatvedelem" class="hover:text-fire">Adatvédelem</a><a href="/sutik" class="hover:text-fire transition-colors">Sütik</a>
+        <a href="/impresszum" class="hover:text-fire">Impresszum</a></nav></div></footer>
+</body></html>
